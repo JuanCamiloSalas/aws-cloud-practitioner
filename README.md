@@ -93,6 +93,23 @@
 - **Agilidad:** Desarrollar, testear y lanzar rápidamente aplicaciones de software.
 
 ### Tipos de Cloud Computing
+| En las instalaciones | Infraestructura como servicio (IaaS) | Plataforma como servicio (PaaS) | Software como servicio (SaaS) |
+|----------------------|----------------------|-------------------------------------|--------------------------------|
+![Aplicaciones](https://img.shields.io/badge/Aplicaciones-175073?style=for-the-badge) | ![Aplicaciones](https://img.shields.io/badge/Aplicaciones-175073?style=for-the-badge) | ![Aplicaciones](https://img.shields.io/badge/Aplicaciones-175073?style=for-the-badge) | ![Aplicaciones](https://img.shields.io/badge/Aplicaciones-FF4858?style=for-the-badge) |
+![Datos](https://img.shields.io/badge/Datos-175073?style=for-the-badge) | ![Datos](https://img.shields.io/badge/Datos-175073?style=for-the-badge) | ![Datos](https://img.shields.io/badge/Datos-175073?style=for-the-badge) | ![Datos](https://img.shields.io/badge/Datos-FF4858?style=for-the-badge) |
+![Tiempo de ejecución](https://img.shields.io/badge/Tiempo_de_ejecución-175073?style=for-the-badge) | ![Tiempo de ejecución](https://img.shields.io/badge/Tiempo_de_ejecución-175073?style=for-the-badge) | ![Tiempo de ejecución](https://img.shields.io/badge/Tiempo_de_ejecución-FF4858?style=for-the-badge) | ![Tiempo de ejecución](https://img.shields.io/badge/Tiempo_de_ejecución-FF4858?style=for-the-badge) |
+![Middleware](https://img.shields.io/badge/Middleware-175073?style=for-the-badge) | ![Middleware](https://img.shields.io/badge/Middleware-175073?style=for-the-badge) | ![Middleware](https://img.shields.io/badge/Middleware-FF4858?style=for-the-badge) | ![Middleware](https://img.shields.io/badge/Middleware-FF4858?style=for-the-badge) |
+![O/S](https://img.shields.io/badge/O%2FS-175073?style=for-the-badge) | ![O/S](https://img.shields.io/badge/O%2FS-175073?style=for-the-badge) | ![O/S](https://img.shields.io/badge/O%2FS-FF4858?style=for-the-badge) | ![O/S](https://img.shields.io/badge/O%2FS-FF4858?style=for-the-badge) |
+![Virtualización](https://img.shields.io/badge/Virtualización-175073?style=for-the-badge) | ![Virtualización](https://img.shields.io/badge/Virtualización-FF4858?style=for-the-badge) | ![Virtualización](https://img.shields.io/badge/Virtualización-FF4858?style=for-the-badge) | ![Virtualización](https://img.shields.io/badge/Virtualización-FF4858?style=for-the-badge) |
+![Servidores](https://img.shields.io/badge/Servidores-175073?style=for-the-badge) | ![Servidores](https://img.shields.io/badge/Servidores-FF4858?style=for-the-badge) | ![Servidores](https://img.shields.io/badge/Servidores-FF4858?style=for-the-badge) | ![Servidores](https://img.shields.io/badge/Servidores-FF4858?style=for-the-badge) |
+![Almacenamiento](https://img.shields.io/badge/Almacenamiento-175073?style=for-the-badge) | ![Almacenamiento](https://img.shields.io/badge/Almacenamiento-FF4858?style=for-the-badge) | ![Almacenamiento](https://img.shields.io/badge/Almacenamiento-FF4858?style=for-the-badge) | ![Almacenamiento](https://img.shields.io/badge/Almacenamiento-FF4858?style=for-the-badge) |
+![Networking](https://img.shields.io/badge/Networking-175073?style=for-the-badge) | ![Networking](https://img.shields.io/badge/Networking-FF4858?style=for-the-badge) | ![Networking](https://img.shields.io/badge/Networking-FF4858?style=for-the-badge) | ![Networking](https://img.shields.io/badge/Networking-FF4858?style=for-the-badge) |
+
+-------------------
+![Tú administras](https://img.shields.io/badge/Tú_administras-175073?style=for-the-badge)
+
+![El proveedor administra](https://img.shields.io/badge/El_proveedor_administra-FF4858?style=for-the-badge)
+
 #### Infraestructura como servicio (IaaS)
 - Proporciona bloques de construcción para la IT en el cloud
 - Proporciona redes, ordenadores y espacio de almacenamiento de datos
@@ -104,22 +121,6 @@ subyacente
 - Se centra en el despliegue y la gestión de tus aplicaciones
 #### Software como servicio (SaaS)
 - Producto completo que es ejecutado y gestionado por el proveedor de servicios
-
-| En las instalaciones | Infraestructura como servicio (IaaS) | Plataforma como servicio (PaaS) | Software como servicio (SaaS) |
-|----------------------|----------------------|-------------------------------------|--------------------------------|
-![Aplicaciones](https://img.shields.io/badge/Aplicaciones-00CCC0?style=for-the-badge) | ![Aplicaciones](https://img.shields.io/badge/Aplicaciones-00CCC0?style=for-the-badge) | ![Aplicaciones](https://img.shields.io/badge/Aplicaciones-00CCC0?style=for-the-badge) | ![Aplicaciones](https://img.shields.io/badge/Aplicaciones-FF4858?style=for-the-badge) |
-![Datos](https://img.shields.io/badge/Datos-00CCC0?style=for-the-badge) | ![Datos](https://img.shields.io/badge/Datos-00CCC0?style=for-the-badge) | ![Datos](https://img.shields.io/badge/Datos-00CCC0?style=for-the-badge) | ![Datos](https://img.shields.io/badge/Datos-FF4858?style=for-the-badge) |
-![Tiempo de ejecución](https://img.shields.io/badge/Tiempo_de_ejecución-00CCC0?style=for-the-badge) | ![Tiempo de ejecución](https://img.shields.io/badge/Tiempo_de_ejecución-00CCC0?style=for-the-badge) | ![Tiempo de ejecución](https://img.shields.io/badge/Tiempo_de_ejecución-FF4858?style=for-the-badge) | ![Tiempo de ejecución](https://img.shields.io/badge/Tiempo_de_ejecución-FF4858?style=for-the-badge) |
-![Middleware](https://img.shields.io/badge/Middleware-00CCC0?style=for-the-badge) | ![Middleware](https://img.shields.io/badge/Middleware-00CCC0?style=for-the-badge) | ![Middleware](https://img.shields.io/badge/Middleware-FF4858?style=for-the-badge) | ![Middleware](https://img.shields.io/badge/Middleware-FF4858?style=for-the-badge) |
-![O/S](https://img.shields.io/badge/O%2FS-00CCC0?style=for-the-badge) | ![O/S](https://img.shields.io/badge/O%2FS-00CCC0?style=for-the-badge) | ![O/S](https://img.shields.io/badge/O%2FS-FF4858?style=for-the-badge) | ![O/S](https://img.shields.io/badge/O%2FS-FF4858?style=for-the-badge) |
-![Virtualización](https://img.shields.io/badge/Virtualización-00CCC0?style=for-the-badge) | ![Virtualización](https://img.shields.io/badge/Virtualización-FF4858?style=for-the-badge) | ![Virtualización](https://img.shields.io/badge/Virtualización-FF4858?style=for-the-badge) | ![Virtualización](https://img.shields.io/badge/Virtualización-FF4858?style=for-the-badge) |
-![Servidores](https://img.shields.io/badge/Servidores-00CCC0?style=for-the-badge) | ![Servidores](https://img.shields.io/badge/Servidores-FF4858?style=for-the-badge) | ![Servidores](https://img.shields.io/badge/Servidores-FF4858?style=for-the-badge) | ![Servidores](https://img.shields.io/badge/Servidores-FF4858?style=for-the-badge) |
-![Almacenamiento](https://img.shields.io/badge/Almacenamiento-00CCC0?style=for-the-badge) | ![Almacenamiento](https://img.shields.io/badge/Almacenamiento-FF4858?style=for-the-badge) | ![Almacenamiento](https://img.shields.io/badge/Almacenamiento-FF4858?style=for-the-badge) | ![Almacenamiento](https://img.shields.io/badge/Almacenamiento-FF4858?style=for-the-badge) |
-![Networking](https://img.shields.io/badge/Networking-00CCC0?style=for-the-badge) | ![Networking](https://img.shields.io/badge/Networking-FF4858?style=for-the-badge) | ![Networking](https://img.shields.io/badge/Networking-FF4858?style=for-the-badge) | ![Networking](https://img.shields.io/badge/Networking-FF4858?style=for-the-badge) |
-
-[Tú administras](https://img.shields.io/badge/Tú_administras-00CCC0?style=for-the-badge)
-[El proveedor administra](https://img.shields.io/badge/El_proveedor_administra-FF4858?style=for-the-badge)
-
 
 ### Ejemplo de tipos de Cloud Computing 
 - Infraestructura como servicio: 
