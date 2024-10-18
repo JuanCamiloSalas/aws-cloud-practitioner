@@ -202,3 +202,7 @@ de pago por uso
     - Lambda (Función como servicio)
     - Rekognition (Software como servicio)
 
+### Modelo de responsabilidad compartida & Política de uso aceptable
+[![aws-links](https://img.shields.io/badge/Shared%20Responsibility%20Model-orange?style=for-the-badge)](https://aws.amazon.com/compliance/shared-responsibility-model/?nc1=h_ls)
+[![aws-links](https://img.shields.io/badge/AWS%20Acceptable%20Use%20Policy-orange?style=for-the-badge)](https://aws.amazon.com/aup/)
+![AWS edge locations](https://d1.awsstatic.com/security-center/Shared_Responsibility_Model_V2.59d1eccec334b366627e9295b304202faf7b899b.jpg)
