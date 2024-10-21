@@ -33,7 +33,7 @@
 - Seguridad para aplicaciones sensibles
 - Satisfacer necesidades empresariales específicas
 
-<img src="https://www.channelbiz.es/wp-content/uploads/2015/09/Rackspace-684x450.jpg" alt="Logo Cloud Privado" width="200px">
+<img src="/assets/rackspace.jpg" alt="Logo Cloud Privado" width="200px">
 
 #### Cloud público:
 - Recursos en el cloud que son propiedad de un proveedor de servicios en el cloud y son operados por él, y que se suministran a través de Internet
@@ -48,40 +48,40 @@
 
 ### Las cinco características del Cloud computing
 
-**Autoservicio bajo demanda (on-demand):**
+**1. Autoservicio bajo demanda (on-demand):**
 - Los usuarios pueden aprovisionar recursos y utilizarlos sin interacción humana del proveedor de servicios
 
-**Amplio acceso a la red:**
+**2. Amplio acceso a la red:**
 - Los recursos están disponibles a través de la red, y pueden ser accedidos por diversas plataformas de clientes
 
-**Alquiler múltiple y agrupación de recursos:**
+**3. Alquiler múltiple y agrupación de recursos:**
 - Varios clientes pueden compartir la misma infraestructura y aplicaciones con seguridad y privacidad
 - Múltiples clientes reciben servicio desde los mismos recursos físicos
 
-**Rápida elasticidad y escalabilidad:**
+**4. Rápida elasticidad y escalabilidad:**
 - Adquirir y disponer de recursos de forma automática y rápida cuando sea necesario
 - Escala rápida y fácilmente en función de la demanda
 
-**Servicio medido:**
+**5. Servicio medido:**
 - El uso se mide, los usuarios pagan correctamente por lo que han utilizado
 
 ### Seis ventajas del Cloud computing
 
-**Cambia el gasto de capital (CAPEX) por el gasto operativo (OPEX)**
+**1. Cambia el gasto de capital (CAPEX) por el gasto operativo (OPEX)**
 - Pagar bajo demanda: no poseer el hardware
 - Reducción del coste total de propiedad (TCO) y de los gastos operativos (OPEX)
 
-**Te beneficias de economías de escala masivas**
+**2. Te beneficias de economías de escala masivas**
 - Los precios se reducen ya que AWS es más eficiente debido a la gran escala
 
-**Deja de adivinar la capacidad**
+**3. Deja de adivinar la capacidad**
 - Escala basada en el uso real medido
 
-**Aumentar la velocidad y la agilidad**
+**4. Aumentar la velocidad y la agilidad**
 
-**Deja de gastar dinero en el funcionamiento y el mantenimiento de los centros de datos**
+**5. Deja de gastar dinero en el funcionamiento y el mantenimiento de los centros de datos**
 
-**Se global en minutos:** aprovecha la infraestructura global de AWS
+**6. Sé global en minutos:** aprovecha la infraestructura global de AWS
 
 ### Problemas resueltos por el Cloud
 
@@ -180,13 +180,13 @@ de pago por uso
 - Están separadas unas de otras, de modo que están aisladas de las catástrofes.
 - Están conectadas con redes de alto ancho de banda y latencia ultrabaja.
 
-![AWS-region-az](https://disaster-recovery.workshop.aws/images/aws-region2.png)
+![AWS-region-az](/assets/aws-infra.png)
 
 ### Puntos de presencia de AWS (Edge Locations)
 - Amazon tiene +450 puntos de presencia (+10 cachés regionales) en +90 ciudades de +40 países.
 - El contenido se entrega a los usuarios finales con menor latencia.
 
-![AWS edge locations](https://docs.aws.amazon.com/es_es/whitepapers/latest/aws-fault-isolation-boundaries/images/amazon-cloudfront.png)
+![AWS edge locations](/assets/aws-edge-locations.png)
 
 ### Tour por la consola de AWS
 [![aws-links](https://img.shields.io/badge/Servicios%20de%20AWS%20por%20región-orange?style=for-the-badge)](https://aws.amazon.com/es/about-aws/global-infrastructure/regional-product-services/)
@@ -205,4 +205,4 @@ de pago por uso
 ### Modelo de responsabilidad compartida & Política de uso aceptable
 [![aws-links](https://img.shields.io/badge/Shared%20Responsibility%20Model-orange?style=for-the-badge)](https://aws.amazon.com/compliance/shared-responsibility-model/?nc1=h_ls)
 [![aws-links](https://img.shields.io/badge/AWS%20Acceptable%20Use%20Policy-orange?style=for-the-badge)](https://aws.amazon.com/aup/)
-![AWS edge locations](https://d1.awsstatic.com/security-center/Shared_Responsibility_Model_V2.59d1eccec334b366627e9295b304202faf7b899b.jpg)
+![AWS edge locations](/assets/aws-responsability-model.jpg)
