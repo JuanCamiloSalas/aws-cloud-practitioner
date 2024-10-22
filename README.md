@@ -1,4 +1,3 @@
-# AWS
 ![AWS-region-az](/assets/background.png)
 ## 🔗 Links
 [![aws-links](https://img.shields.io/badge/Links%20del%20curso-orange?style=for-the-badge)](https://blockstellart.com/aws-cloud-practitioner/)
@@ -146,6 +145,8 @@ de pago por uso
 
 ## Infraestructura global de AWS 
 [![aws-links](https://img.shields.io/badge/aws%20Infraestructura-orange?style=for-the-badge)](https://aws.amazon.com/es/about-aws/global-infrastructure)
+[![aws-links](https://img.shields.io/badge/Regiones,%20zonas%20de%20disponibilidad%20y%20Local%20Zones-orange?style=for-the-badge)](https://aws.amazon.com/es/what-is/data-center/#:~:text=AWS%20tiene%20el%20concepto%20de,zona%20de%20disponibilidad%20(AZ).)
+[![aws-links](https://img.shields.io/badge/qu%C3%A9%20es%20un%20centro%20de%20datos-orange?style=for-the-badge)](https://aws.amazon.com/es/what-is/data-center/#:~:text=AWS%20tiene%20el%20concepto%20de,zona%20de%20disponibilidad%20(AZ).)
 - AWS Regions 
 - Regiones de AWS 
 
