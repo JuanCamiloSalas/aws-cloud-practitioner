@@ -1,9 +1,9 @@
 ![AWS-region-az](/assets/background.png)
 
 ## 🔗 Links
-[![aws-links](https://img.shields.io/badge/Links%20del%20curso-orange?style=for-the-badge)](https://blockstellart.com/aws-cloud-practitioner/)
-[![aws-links](https://img.shields.io/badge/Examen%20de%20práctica-orange?style=for-the-badge)](https://d1.awsstatic.com/es_ES/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Sample-Questions.pdf)
-[![aws-links](https://img.shields.io/badge/Nivel%20gratuito%20de%20AWS-orange?style=for-the-badge)](https://aws.amazon.com/es/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all)
+[![aws-links](https://img.shields.io/badge/Links_del_curso-orange?style=for-the-badge)](https://blockstellart.com/aws-cloud-practitioner/)
+[![aws-links](https://img.shields.io/badge/Examen_de_práctica-orange?style=for-the-badge)](https://d1.awsstatic.com/es_ES/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Sample-Questions.pdf)
+[![aws-links](https://img.shields.io/badge/Nivel_gratuito_de_AWS-orange?style=for-the-badge)](https://aws.amazon.com/es/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free_Tier_Types=*all&awsf.Free_Tier_Categories=*all)
 
 ## Content
 1. [ ¿Qué es cloud computing?](/1.%20Cloud%20Computing/README.md)

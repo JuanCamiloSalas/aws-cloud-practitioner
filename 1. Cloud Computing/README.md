@@ -1,4 +1,5 @@
-[![aws-links](https://img.shields.io/badge/BACK%20TO%20CONTENT%20TABLE-FFFDBB?style=for-the-badge)](../README.md)
+[![aws-links](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
+[![aws-links](https://img.shields.io/badge/->-FD5A46?style=for-the-badge)](../2.%20IAM/README.md)
 # Qué es el Cloud Computing
 ## Problemas con el enfoque tradicional de las IT
 
@@ -124,9 +125,9 @@ de pago por uso
 > Resuelve el costoso problema de las IT tradicionales
 
 ## Infraestructura global de AWS 
-[![aws-links](https://img.shields.io/badge/aws%20Infraestructura-orange?style=for-the-badge)](https://aws.amazon.com/es/about-aws/global-infrastructure)
-[![aws-links](https://img.shields.io/badge/Regiones,%20zonas%20de%20disponibilidad%20y%20Local%20Zones-orange?style=for-the-badge)](https://aws.amazon.com/es/what-is/data-center/#:~:text=AWS%20tiene%20el%20concepto%20de,zona%20de%20disponibilidad%20(AZ).)
-[![aws-links](https://img.shields.io/badge/qu%C3%A9%20es%20un%20centro%20de%20datos-orange?style=for-the-badge)](https://aws.amazon.com/es/what-is/data-center/#:~:text=AWS%20tiene%20el%20concepto%20de,zona%20de%20disponibilidad%20(AZ).)
+[![aws-links](https://img.shields.io/badge/aws_Infraestructura-orange?style=for-the-badge)](https://aws.amazon.com/es/about-aws/global-infrastructure)
+[![aws-links](https://img.shields.io/badge/Regiones,_zonas_de_disponibilidad_y_Local_Zones-orange?style=for-the-badge)](https://aws.amazon.com/es/what-is/data-center/#:~:text=AWS_tiene_el_concepto_de,zona_de_disponibilidad_(AZ).)
+[![aws-links](https://img.shields.io/badge/qu%C3%A9_es_un_centro_de_datos-orange?style=for-the-badge)](https://aws.amazon.com/es/what-is/data-center/#:~:text=AWS_tiene_el_concepto_de,zona_de_disponibilidad_(AZ).)
 - AWS Regions 
 - Regiones de AWS 
 
@@ -139,7 +140,7 @@ de pago por uso
 - AWS Edge Locations / Points of Presence 
 - Puntos de presencia de AWS
 ### Regiones de AWS
-[![aws-links](https://img.shields.io/badge/aws%20regiones-orange?style=for-the-badge)](https://aws.amazon.com/es/about-aws/global-infrastructure/regions_az/)
+[![aws-links](https://img.shields.io/badge/aws_regiones-orange?style=for-the-badge)](https://aws.amazon.com/es/about-aws/global-infrastructure/regions_az/)
 - AWS tiene Regiones en todo el mundo 
 - Los nombres pueden ser us-east-1, eu-west-3... 
 - Una región es un grupo de centros de datos 
@@ -165,7 +166,7 @@ de pago por uso
 
 ![AWS edge locations](/assets/aws-edge-locations.png)
 ## Tour por la consola de AWS
-[![aws-links](https://img.shields.io/badge/Servicios%20de%20AWS%20por%20región-orange?style=for-the-badge)](https://aws.amazon.com/es/about-aws/global-infrastructure/regional-product-services/)
+[![aws-links](https://img.shields.io/badge/Servicios_de_AWS_por_región-orange?style=for-the-badge)](https://aws.amazon.com/es/about-aws/global-infrastructure/regional-product-services/)
 
 - AWS cuenta con servicios globales:
     - Identity and Access Management (IAM)
@@ -178,9 +179,9 @@ de pago por uso
     - Lambda (Función como servicio)
     - Rekognition (Software como servicio)
 ## Modelo de responsabilidad compartida & Política de uso aceptable
-[![aws-links](https://img.shields.io/badge/Shared%20Responsibility%20Model-orange?style=for-the-badge)](https://aws.amazon.com/compliance/shared-responsibility-model/?nc1=h_ls)
-[![aws-links](https://img.shields.io/badge/AWS%20Acceptable%20Use%20Policy-orange?style=for-the-badge)](https://aws.amazon.com/aup/)
+[![aws-links](https://img.shields.io/badge/Shared_Responsibility_Model-orange?style=for-the-badge)](https://aws.amazon.com/compliance/shared-responsibility-model/?nc1=h_ls)
+[![aws-links](https://img.shields.io/badge/AWS_Acceptable_Use_Policy-orange?style=for-the-badge)](https://aws.amazon.com/aup/)
 ![AWS edge locations](/assets/aws-responsability-model.jpg)
 
-[![aws-links](https://img.shields.io/badge/BACK%20TO%20CONTENT%20TABLE-FFFDBB?style=for-the-badge)](../README.md)
-[![aws-links](https://img.shields.io/badge/2.%20NEXT%20SECTION:%20IAM-FD5A46?style=for-the-badge)](../2.%20IAM/README.md)
+[![aws-links](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
+[![aws-links](https://img.shields.io/badge/->-FD5A46?style=for-the-badge)](../2.%20IAM/README.md)
