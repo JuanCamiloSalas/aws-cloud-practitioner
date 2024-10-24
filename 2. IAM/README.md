@@ -3,7 +3,7 @@
 [![aws-links](https://img.shields.io/badge/->_-FF4859?style=for-the-badge)](../3)
 
 # IAM: Identity & Access Management
-## IAM: Usuarios y Grupos
+## Usuarios y Grupos
 
 - **IAM** = Identity and Access Management, servicio **global**.
 - **Cuenta root / raíz** creada por defecto, no debe ser utilizada ni compartida.
@@ -11,7 +11,7 @@
 - Los **grupos** solo contienen usuarios, no otros grupos.
 - Los usuarios no tienen que pertenecer a un grupo, y el usuario puede pertenecer a varios grupos.
 
-## IAM: Permisos
+## Permisos
 A los **usuarios o grupos** se les pueden asignar documentos JSON llamados **políticas**.
 Ejemplo de una política de IAM:
 
