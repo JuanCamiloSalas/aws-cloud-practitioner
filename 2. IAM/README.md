@@ -13,8 +13,20 @@
 
 ## Permisos
 A los **usuarios o grupos** se les pueden asignar documentos JSON llamados **políticas**.
-Ejemplo de una política de IAM:
 
+> [!WARNING]
+> Nunca usar el usuario root para hacer operaciones
+
+> [!IMPORTANT]
+> Los usarios pueden tener permisos de tres maneras:
+> 1. Agregando el usuario a un grupo
+> 2. Copiando permisos
+> 3. Adjuntando políticas directamente
+
+> [!TIP]
+> En IAM podemos crear un alias de cuentas para la mejor gestión de nuestras cuentas de AWS
+
+## Estructura de las política de IAM:
 ```json
 {
   "Version": "2012-10-17",
@@ -41,20 +53,44 @@ Ejemplo de una política de IAM:
   ]
 }
 ```
+### Constan de:
+- **Version**: versión del lenguaje de la política, siempre incluye `"2012-10-17"`
+- **Id**: un identificador para la política (opcional)
+- **Statement**: una o más declaraciones individuales (obligatorio)
 
-> [!WARNING]
-> Nunca usar el usuario root para hacer operaciones
+### Las declaraciones constan de:
+- **Sid**: un identificador para la declaración (opcional)
+- **Effect**: si la sentencia permite o deniega el acceso (Permitir, Denegar)
+- **Principal**: cuenta/usuario/rol al que se aplica esta política
+- **Action**: lista de acciones que esta política permite o deniega
+- **Resource**: lista de recursos a los que se aplican las acciones
+- **Condition**: condiciones para cuando esta política está en efecto (opcional)
 
-> [!IMPORTANT]
-> Los usarios pueden tener permisos de tres maneras:
-> 1. Agregando el usuario a un grupo
-> 2. Copiando permisos
-> 3. Adjuntando políticas directamente
+## Política de contraseñas
 
-> [!TIP]
-> En IAM podemos crear un alias de cuentas para la mejor gestión de nuestras cuentas de AWS
+- **Contraseñas fuertes** = mayor seguridad para tu cuenta
+- En AWS, puedes configurar una política de contraseñas:
+  - Establecer una longitud mínima de contraseña
+  - Requerir tipos de caracteres específicos:
+    - incluyendo letras mayúsculas
+    - letras minúsculas
+    - números
+    - caracteres no alfanuméricos
+  - Permitir a todos los usuarios de IAM cambiar sus propias contraseñas
+  - Requerir a los usuarios que cambien su contraseña después de un tiempo (caducidad de la contraseña)
+  - Impedir la reutilización de la contraseña
 
-**....Siguiente clase: 22**
+## Multi Factor Authentication - MFA
+Autenticación de dos factores, las cuentas deben protegerse con contraseña y un MFA. 
+
+### Dispositivos de MFA:
+  - Aplicación del autenticador
+  - Llave de seguridad
+  - Token de contraseña temporal de un solo uso (TOTP) de hardware
+
+Clave de seguridad del segundo factor universal U2F
+
+**....Siguiente clase: 27**
 
 [![aws-links](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../1.%20Cloud%20Computing/README.md)
 [![aws-links](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
