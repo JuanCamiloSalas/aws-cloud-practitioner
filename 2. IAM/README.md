@@ -17,11 +17,10 @@ A los **usuarios o grupos** se les pueden asignar documentos JSON llamados **pol
 > [!WARNING]
 > Nunca usar el usuario root para hacer operaciones
 
-> [!IMPORTANT]
-> Los usarios pueden tener permisos de tres maneras:
-> 1. Agregando el usuario a un grupo
-> 2. Copiando permisos
-> 3. Adjuntando políticas directamente
+### Los usarios pueden tener permisos de tres maneras:
+1. Agregando el usuario a un grupo
+2. Copiando permisos
+3. Adjuntando políticas directamente
 
 > [!TIP]
 > En IAM podemos crear un alias de cuentas para la mejor gestión de nuestras cuentas de AWS
@@ -90,7 +89,52 @@ Autenticación de dos factores, las cuentas deben protegerse con contraseña y u
 
 Clave de seguridad del segundo factor universal U2F
 
-**....Siguiente clase: 27**
+## ¿Cómo pueden los usuarios acceder a AWS?
+
+Para acceder a AWS, tienes tres opciones:
+
+- **Consola de administración de AWS** (protegida por contraseña + MFA)
+- **Interfaz de línea de comandos de AWS (CLI)**: protegida por claves de acceso
+- **AWS Software Developer Kit (SDK)** - para el código; protegido por claves de acceso
+
+    - Las claves de acceso se generan a través de la consola de AWS
+
+- Los usuarios gestionan sus propias claves de acceso
+- **Las claves de acceso son secretas, como una contraseña. No las compartas**
+
+    - ID de la clave de acceso ≈= nombre de usuario
+    - Clave de acceso secreta ≈= contraseña
+
+## ¿Qué es la CLI de AWS?
+
+- Una herramienta que permite interactuar con los servicios de AWS mediante comandos en tu shell de línea de comandos
+- Acceso directo a las API públicas de los servicios de AWS
+- Puedes desarrollar scripts para gestionar tus recursos
+- Es de código abierto [https://github.com/aws/aws-cli](https://github.com/aws/aws-cli)
+- Alternativa al uso de la consola de administración de AWS
+
+## ¿Qué es el SDK de AWS?
+
+- Kit de desarrollo de software de AWS (AWS SDK)
+- APIs específicas para cada lenguaje (conjunto de bibliotecas)
+- Permite acceder y administrar los servicios de AWS mediante programación
+- Integrado en la aplicación
+- Admite:
+  - SDKs (JavaScript, Python, PHP, .NET, Ruby, Java, Go, Node.js, C++)
+  - SDKs para móviles (Android, iOS, ...)
+  - SDKs para dispositivos IoT (Embedded C, Arduino, ...)
+- Ejemplo: AWS CLI está construido sobre AWS SDK para Python
+
+## Roles IAM para los servicios
+
+- Algún servicio de AWS tendrá que realizar acciones en tu nombre.
+- Para ello, asignaremos **permisos** a los servicios de AWS con **Roles IAM**.
+- Roles comunes:
+  - Roles de Instancia EC2
+  - Roles de la función Lambda
+  - Roles para CloudFormation
+
+**....Siguiente clase: 28**
 
 [![aws-links](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../1.%20Cloud%20Computing/README.md)
 [![aws-links](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
