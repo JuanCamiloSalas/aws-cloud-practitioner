@@ -24,7 +24,7 @@
 - Seguridad para aplicaciones sensibles
 - Satisfacer necesidades empresariales específicas
 
-<img src="/assets/rackspace.jpg" alt="Logo Cloud Privado" width="200px">
+<img src="./assets/rackspace.jpg" alt="Logo Cloud Privado" width="200px">
 ### Cloud público:
 - Recursos en el cloud que son propiedad de un proveedor de servicios en el cloud y son operados por él, y que se suministran a través de Internet
 - Seis ventajas de la computación en el cloud
@@ -159,12 +159,12 @@ de pago por uso
 - Están separadas unas de otras, de modo que están aisladas de las catástrofes.
 - Están conectadas con redes de alto ancho de banda y latencia ultrabaja.
 
-![AWS-region-az](/assets/aws-infra.png)
+![AWS-region-az](./assets/aws-infra.png)
 ### Puntos de presencia de AWS (Edge Locations)
 - Amazon tiene +450 puntos de presencia (+10 cachés regionales) en +90 ciudades de +40 países.
 - El contenido se entrega a los usuarios finales con menor latencia.
 
-![AWS edge locations](/assets/aws-edge-locations.png)
+![AWS edge locations](./assets/aws-edge-locations.png)
 ## Tour por la consola de AWS
 [![aws-links](https://img.shields.io/badge/Servicios_de_AWS_por_región-orange?style=for-the-badge)](https://aws.amazon.com/es/about-aws/global-infrastructure/regional-product-services/)
 
@@ -181,7 +181,7 @@ de pago por uso
 ## Modelo de responsabilidad compartida & Política de uso aceptable
 [![aws-links](https://img.shields.io/badge/Shared_Responsibility_Model-orange?style=for-the-badge)](https://aws.amazon.com/compliance/shared-responsibility-model/?nc1=h_ls)
 [![aws-links](https://img.shields.io/badge/AWS_Acceptable_Use_Policy-orange?style=for-the-badge)](https://aws.amazon.com/aup/)
-![AWS edge locations](/assets/aws-responsability-model.jpg)
+![AWS edge locations](./assets/aws-responsability-model.jpg)
 
 [![aws-links](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
 [![aws-links](https://img.shields.io/badge/->-FD5A46?style=for-the-badge)](../2.%20IAM/README.md)

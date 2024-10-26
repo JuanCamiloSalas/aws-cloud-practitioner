@@ -1,4 +1,4 @@
-![AWS-region-az](/assets/background.png)
+![AWS-region-az](./assets/background.png)
 
 ## 🔗 Links
 [![aws-links](https://img.shields.io/badge/Links_del_curso-orange?style=for-the-badge)](https://blockstellart.com/aws-cloud-practitioner/)
