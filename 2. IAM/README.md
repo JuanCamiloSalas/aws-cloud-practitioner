@@ -4,7 +4,6 @@
 
 # IAM: Identity & Access Management
 ## Usuarios y Grupos
-
 - **IAM** = Identity and Access Management, servicio **global**.
 - **Cuenta root / raíz** creada por defecto, no debe ser utilizada ni compartida.
 - Los **usuarios** son personas dentro de tu organización, y pueden ser agrupados.
@@ -66,7 +65,6 @@ A los **usuarios o grupos** se les pueden asignar documentos JSON llamados **pol
 - **Condition**: condiciones para cuando esta política está en efecto (opcional)
 
 ## Política de contraseñas
-
 - **Contraseñas fuertes** = mayor seguridad para tu cuenta
 - En AWS, puedes configurar una política de contraseñas:
   - Establecer una longitud mínima de contraseña
@@ -90,7 +88,6 @@ Autenticación de dos factores, las cuentas deben protegerse con contraseña y u
 Clave de seguridad del segundo factor universal U2F
 
 ## ¿Cómo pueden los usuarios acceder a AWS?
-
 Para acceder a AWS, tienes tres opciones:
 
 - **Consola de administración de AWS** (protegida por contraseña + MFA)
@@ -106,7 +103,6 @@ Para acceder a AWS, tienes tres opciones:
     - Clave de acceso secreta ≈= contraseña
 
 ## ¿Qué es la CLI de AWS?
-
 - Una herramienta que permite interactuar con los servicios de AWS mediante comandos en tu shell de línea de comandos
 - Acceso directo a las API públicas de los servicios de AWS
 - Puedes desarrollar scripts para gestionar tus recursos
@@ -114,7 +110,6 @@ Para acceder a AWS, tienes tres opciones:
 - Alternativa al uso de la consola de administración de AWS
 
 ## ¿Qué es el SDK de AWS?
-
 - Kit de desarrollo de software de AWS (AWS SDK)
 - APIs específicas para cada lenguaje (conjunto de bibliotecas)
 - Permite acceder y administrar los servicios de AWS mediante programación
@@ -126,15 +121,52 @@ Para acceder a AWS, tienes tres opciones:
 - Ejemplo: AWS CLI está construido sobre AWS SDK para Python
 
 ## Roles IAM para los servicios
-
 - Algún servicio de AWS tendrá que realizar acciones en tu nombre.
 - Para ello, asignaremos **permisos** a los servicios de AWS con **Roles IAM**.
 - Roles comunes:
   - Roles de Instancia EC2
   - Roles de la función Lambda
   - Roles para CloudFormation
+ 
+## Herramientas de seguridad IAM
 
-**....Siguiente clase: 28**
+- **IAM Credentials Report / Informe de credenciales de IAM (a nivel de cuenta)**
+  - Un informe que enumera todos los usuarios de tu cuenta y el estado de tus diversas credenciales.
+
+- **IAM Access Advisor / Asesor de acceso de IAM (a nivel de usuario)**
+  - Muestra los permisos de servicio concedidos a un usuario y cuándo se accedió a esos servicios por última vez.
+  - Puedes utilizar esta información para revisar tus políticas.
+
+## Directrices y buenas prácticas de IAM
+- No utilices la cuenta root excepto para la configuración de la cuenta AWS.
+- Un usuario físico = Un **usuario** AWS.
+- **Asignar usuarios a grupos** y asignar permisos a grupos.
+- Crear una **política de contraseñas fuerte**.
+- Utilizar y reforzar el uso de la **autenticación multifactor (MFA)**.
+- Crear y utilizar **Roles** para dar permisos a los servicios de AWS.
+- Utilizar claves de acceso para el acceso programático (CLI / SDK).
+- Revisar los permisos de tu cuenta con el informe de credenciales de IAM o el asesor de acceso de IAM.
+- **No compartir nunca los usuarios de IAM ni las claves de acceso**.
+
+## Modelo de responsabilidad compartida para IAM
+| AWS                                            | Tú                                                                  |
+|------------------------------------------------|---------------------------------------------------------------------|
+| - Infraestructura (seguridad de la red global) | - Gestión y supervisión de usuarios, grupos, roles y políticas      |
+| - Análisis de configuración y vulnerabilidad   | - Habilitar MFA en todas las cuentas                                |
+| - Validación de la conformidad                 | - Rotar todas las claves con frecuencia                             |
+|                                                | - Utilizar las herramientas IAM para aplicar los permisos adecuados |
+|                                                | - Analizar los patrones de acceso y revisar los permisos            |
+
+## Resumen de IAM
+- ***Usuarios***: mapeado a un usuario físico, tiene una contraseña para la consola de AWS
+- ***Grupos***: contiene sólo usuarios
+- ***Políticas***: Documento JSON que describe los permisos para los usuarios o grupos
+- ***Roles***: para instancias EC2 y demás servicios AWS
+- ***Seguridad***: MFA + Política de contraseñas
+- ***AWS CLI***: gestiona tus servicios de AWS mediante la línea de comandos
+- ***AWS SDK***: gestiona tus servicios de AWS utilizando un lenguaje de programación
+- ***Claves de acceso***: accede a AWS mediante la CLI o el SDK
+- ***Auditoría***: Informes de credenciales de IAM y Asesor de acceso de IAM
 
 [![aws-links](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../1.%20Cloud%20Computing/README.md)
 [![aws-links](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
