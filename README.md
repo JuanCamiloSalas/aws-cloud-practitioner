@@ -6,9 +6,9 @@
 [![aws-links](https://img.shields.io/badge/Nivel_gratuito_de_AWS-orange?style=for-the-badge)](https://aws.amazon.com/es/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free_Tier_Types=*all&awsf.Free_Tier_Categories=*all)
 
 ## Content
-1. [ ¿Qué es cloud computing?](/1.%20Cloud%20Computing/README.md)
-2. [ IAM - Identity & Access Management](/2.%20IAM/README.md)
-3. EC2 - Elastic Compute Cloud
+1. [ ¿Qué es cloud computing?](/1_Cloud_Computing/README.md)
+2. [ IAM - Identity & Access Management](/2_IAM/README.md)
+3. [ EC2 - Elastic Compute Cloud ](/3_EC2/README.md)
 4. Almacenamiento de instancias EC2
 5. ELB y ASG - Elastic Load Balancing y Auto Scaling Groups
 6. S3

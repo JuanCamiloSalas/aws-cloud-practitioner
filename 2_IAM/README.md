@@ -1,6 +1,6 @@
-[![aws-links](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../1.%20Cloud%20Computing/README.md)
+[![aws-links](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../1_Cloud_Computing/README.md)
 [![aws-links](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
-[![aws-links](https://img.shields.io/badge/->_-FF4859?style=for-the-badge)](../3)
+[![aws-links](https://img.shields.io/badge/->_-FF4859?style=for-the-badge)](../3_EC2/README.md)
 
 # IAM: Identity & Access Management
 ## Usuarios y Grupos
@@ -170,6 +170,7 @@ Para acceder a AWS, tienes tres opciones:
 - ***Claves de acceso***: accede a AWS mediante la CLI o el SDK
 - ***Auditoría***: Informes de credenciales de IAM y Asesor de acceso de IAM
 
-[![aws-links](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../1.%20Cloud%20Computing/README.md)
+[![aws-links](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../1_Cloud_Computing/README.md)
 [![aws-links](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
-[![aws-links](https://img.shields.io/badge/->_-FF4859?style=for-the-badge)](../3)
+[![aws-links](https://img.shields.io/badge/->_-FF4859?style=for-the-badge)](../3_EC2/README.md)
+

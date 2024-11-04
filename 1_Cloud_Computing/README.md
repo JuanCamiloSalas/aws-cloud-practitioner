@@ -1,5 +1,5 @@
 [![aws-links](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
-[![aws-links](https://img.shields.io/badge/->-FD5A46?style=for-the-badge)](../2.%20IAM/README.md)
+[![aws-links](https://img.shields.io/badge/->-FD5A46?style=for-the-badge)](../2_IAM/README.md)
 # Qué es el Cloud Computing
 ## Problemas con el enfoque tradicional de las IT
 
@@ -184,4 +184,4 @@ de pago por uso
 ![AWS edge locations](./assets/aws-responsability-model.jpg)
 
 [![aws-links](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
-[![aws-links](https://img.shields.io/badge/->-FD5A46?style=for-the-badge)](../2.%20IAM/README.md)
+[![aws-links](https://img.shields.io/badge/->-FD5A46?style=for-the-badge)](../2_IAM/README.md)
