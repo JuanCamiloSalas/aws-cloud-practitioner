@@ -127,6 +127,8 @@ Para acceder a AWS, tienes tres opciones:
   - Roles de Instancia EC2
   - Roles de la función Lambda
   - Roles para CloudFormation
+
+![AWS-roles](./assets/aws-roles.png)
  
 ## Herramientas de seguridad IAM
 
