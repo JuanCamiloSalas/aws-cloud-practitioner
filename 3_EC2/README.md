@@ -80,7 +80,48 @@
   - Aplicaciones de almacenamiento de datos
   - Sistemas de archivos distribuidos
 
-**Next Class => 44. Grupos de seguridad y puertos clásicos**
+## Introducción a los grupos de seguridad
+- Los grupos de seguridad son la base de la seguridad de la red en AWS.
+- Controlan cómo se permite el tráfico dentro o fuera de nuestras Instancias EC2.
+
+  ![Security Group](path/to/image.png) <!--Subir imagen -->
+
+- Los grupos de seguridad sólo contienen reglas de **permiso**.
+- Las reglas de los grupos de seguridad pueden hacer referencia por IP o por grupo de seguridad.
+
+### Grupos de seguridad - Inmersión más profunda
+- Los grupos de seguridad actúan como un "firewall" en las instancias de EC2.
+- Regulan:
+  - El acceso a los puertos
+  - Rangos de IP autorizados - IPv4 e IPv6
+  - Control de la red de entrada (de otros a la instancia)
+  - Control de la red saliente (desde la instancia hacia otra)
+
+#### Ejemplo de grupo de seguridad: tráfinco entrante y saliente
+![Security Group](path/to/image.png) <!--Subir imagen -->
+
+#### Ejemplo de grupo de seguridad: tráfico entre más grupos
+![Security Group](path/to/image.png) <!--Subir imagen -->
+
+### Grupos de seguridad - Es bueno saber
+- Puede adjuntarse a múltiples instancias.
+- Bloqueado a una combinación de región / VPC.
+- Vive "fuera" del EC2 - si el tráfico está bloqueado, la instancia EC2 no lo verá.
+- **Es bueno mantener un grupo de seguridad separado para el acceso SSH.**
+- Si tu aplicación no es accesible (tiempo de espera), entonces es un problema de grupo de seguridad.
+- Si tu aplicación da un error de "conexión rechazada", entonces es un error de la aplicación o no se ha lanzado.
+- Todo el tráfico de entrada está **bloqueado** por defecto.
+- Todo el tráfico de salida está **autorizado** por defecto.
+
+## Puertos clásicos que hay que conocer
+- **22 = SSH (Secure Shell)** - iniciar sesión en una instancia de Linux
+- **21 = FTP (File Transfer Protocol)** - subir archivos a un archivo compartido
+- **22 = SFTP (Secure File Transfer Protocol)** - subir archivos usando SSH
+- **80 = HTTP** - acceso a sitios web no seguros
+- **443 = HTTPS** - acceso a sitios web seguros
+- **3389 = RDP (Remote Desktop Protocol)** - iniciar sesión en una instancia de Windows
+
+**Next Class => 45. Grupos de seguridad - Práctica**
 
 [![aws-links](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../2_IAM/README.md)
 [![aws-links](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
