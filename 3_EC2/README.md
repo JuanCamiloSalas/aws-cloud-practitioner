@@ -84,7 +84,7 @@
 - Los grupos de seguridad son la base de la seguridad de la red en AWS.
 - Controlan cómo se permite el tráfico dentro o fuera de nuestras Instancias EC2.
 
-  ![Security Group](path/to/image.png) <!--Subir imagen -->
+![Security Group](./assets/aws-sg.png)
 
 - Los grupos de seguridad sólo contienen reglas de **permiso**.
 - Las reglas de los grupos de seguridad pueden hacer referencia por IP o por grupo de seguridad.
@@ -98,10 +98,10 @@
   - Control de la red saliente (desde la instancia hacia otra)
 
 #### Ejemplo de grupo de seguridad: tráfinco entrante y saliente
-![Security Group](path/to/image.png) <!--Subir imagen -->
+![Security Group](./assets/aws-sg-diagram-a.png)
 
 #### Ejemplo de grupo de seguridad: tráfico entre más grupos
-![Security Group](path/to/image.png) <!--Subir imagen -->
+![Security Group](./assets/aws-sg-diagram-b.png)
 
 ### Grupos de seguridad - Es bueno saber
 - Puede adjuntarse a múltiples instancias.
