@@ -113,7 +113,7 @@
 - Todo el tráfico de entrada está **bloqueado** por defecto.
 - Todo el tráfico de salida está **autorizado** por defecto.
 
-## Puertos clásicos que hay que conocer
+### Puertos clásicos que hay que conocer
 - **22 = SSH (Secure Shell)** - iniciar sesión en una instancia de Linux
 - **21 = FTP (File Transfer Protocol)** - subir archivos a un archivo compartido
 - **22 = SFTP (Secure File Transfer Protocol)** - subir archivos usando SSH
@@ -121,7 +121,131 @@
 - **443 = HTTPS** - acceso a sitios web seguros
 - **3389 = RDP (Remote Desktop Protocol)** - iniciar sesión en una instancia de Windows
 
-**Next Class => 45. Grupos de seguridad - Práctica**
+### EC2 Instance Connect
+Sirve para conectarnos a las instancias por medio de ssh desde el mismo navegador.
+- No es necesario utilizar el archivo `key-pair` de claves que se ha descargado
+- La "magia" es que una clave temporal es cargada en EC2 por AWS
+- Funciona sólo out-of-the-box con Amazon Linux 2
+-El puerto 22 debe estar abierto en el grupo de seguridad asociado a la instancia.
+
+## Opciones de compra de instancias EC2
+- **Instancias bajo demanda**: carga de trabajo corta, precio predecible, pago por segundos.
+- **Reservadas** (1 y 3 años):
+  - **Instancias reservadas**: cargas de trabajo largas.
+  - **Instancias reservadas convertibles**: cargas de trabajo largas con instancias flexibles.
+- **Planes de ahorro** (1 y 3 años): compromiso con una cantidad de uso, carga de trabajo larga.
+- **Instancias Spot**: cargas de trabajo cortas, baratas, pueden perder instancias (menos fiables).
+- **Hosts dedicados**: reserve un servidor físico completo, controle la ubicación de las instancias.
+- **Instancias dedicadas**: ningún otro cliente compartirá tu hardware.
+- **Reservas de capacidad**: reserva de capacidad en una AZ específica para cualquier duración.
+ 
+### EC2 Compra bajo demanda
+- **Paga por uso**:
+  - Linux o Windows - facturación por segundo, después del primer minuto
+  - Todos los demás sistemas operativos: facturación por hora
+- Tiene el coste más elevado, pero no hay que pagar por adelantado.
+- Sin compromiso a largo plazo.
+- Recomendado para **cargas de trabajo a corto plazo y sin interrupciones**, cuando no se puede predecir el comportamiento de la aplicación.
+
+### Instancias reservadas de EC2
+- Hasta un **72% de descuento** en comparación con el servicio bajo demanda.
+- Reserva de atributos de instancia específicos (**tipo de instancia, región, ocupación, sistema operativo**).
+- **Periodo de reserva** - 1 año (+descuento) o 3 años (+++descuento).
+- **Opciones de pago** - Sin pago inicial (+), Pago inicial parcial (++), Pago inicial total (+++).
+- **Alcance de la instancia reservada** - Por **región** o por **zona** (capacidad de reserva en una AZ).
+- Recomendado para aplicaciones de uso constante (piensa en una base de datos).
+- Puedes comprar y vender en el Marketplace de instancias reservadas.
+- **Instancia reservada convertible:**
+  - Puedes cambiar el tipo de instancia EC2, la familia de instancias, el SO, etc.
+  - Hasta un **66% de descuento**.
+
+> [!NOTE]
+> Los % de descuento pueden ser diferentes ya que AWS los cambia con el tiempo - los números exactos no son necesarios para el examen. Esto es solo para fines ilustrativos.
+
+### Planes de ahorro EC2
+- Obtén un descuento basado en el uso a largo plazo (hasta el 72%).
+- Comprométete a un determinado tipo de uso (10 $/hora durante 1 o 3 años).
+- El uso más allá de los planes de ahorro de EC2 se factura al precio bajo demanda.
+
+- Bloqueado a una familia de instancias específica y a una región de AWS (por ejemplo, M5 en us-east-1).
+- Flexible a través de:
+  - **Tamaño de instancia** (por ejemplo, m5.xlarge, m5.2xlarge).
+  - **Sistema operativo** (por ejemplo, Linux, Windows).
+  - **Tenencia** (Host, dedicado, por defecto).
+
+### Instancias EC2 Spot
+- Puedes obtener un **descuento de hasta el 90%** en comparación con la demanda.
+- Instancias que puedes "perder" en cualquier momento si su precio máximo es inferior al precio spot actual.
+- Las instancias **MÁS rentables** de AWS.
+- **Útil para las cargas de trabajo que son resistentes a los fallos**
+  - Trabajos por lotes (Batch Jobs)
+  - Análisis de datos
+  - Procesamiento de imágenes
+  - Cualquier carga de trabajo **distribuida**
+  - Cargas de trabajo con una hora de inicio y finalización flexible
+- **No es adecuado para trabajos críticos o bases de datos**.
+
+### Hosts dedicados EC2
+- Un servidor físico con capacidad de instancia EC2 totalmente dedicado a su uso.
+- Permite abordar los requisitos de **normativas y utilizar licencias de software vinculadas al servidor existentes** (licencias de software por socket, por núcleo, por VM).
+- **Opciones de compra**:
+  - **Bajo demanda** - pago por segundo para el host dedicado activo.
+  - **Reservado** - 1 o 3 años (sin pago inicial, pago inicial parcial, pago inicial total).
+- La opción más cara.
+
+#### Útil para:
+- El software que tiene un modelo de licencia complicado (BYOL - Bring Your Own License).
+- Empresas que tienen fuertes necesidades de regulación o cumplimiento.
+
+### Instancias dedicadas de EC2
+- Las instancias se ejecutan en un hardware dedicado para ti.
+- Puedes compartir el hardware con otras instancias de la misma cuenta.
+- No hay control sobre la ubicación de las instancias (se puede mover el hardware después de la parada/arranque).
+
+### Reservas de capacidad de EC2
+- Reserva la capacidad de las instancias **bajo demanda** en una AZ específica para cualquier duración.
+- Siempre tendrás acceso a la capacidad de EC2 cuando la necesites.
+- **Sin compromiso de tiempo** (crear/cancelar en cualquier momento), **sin descuentos de facturación**.
+- Combina con las instancias regionales reservadas y los planes de ahorro para beneficiarte de descuentos en la facturación.
+- Se te cobra la tarifa bajo demanda tanto si ejecuta instancias como si no.
+- Adecuado para cargas de trabajo ininterrumpidas a corto plazo que necesitan estar en una AZ específica.
+
+## Comparación de precios
+**Ejemplo - m4.large - us-east-1**
+
+| Tipo de precio                                | Precio (por hora)                           |
+|-----------------------------------------------|---------------------------------------------|
+| Precio bajo demanda (On-demand)               | 0.10$                                       |
+| Instancias de spot (Spot instances)           | 0.038$ - 0.039$ (hasta 61% de descuento)    |
+| Instancia reservada (1 año) (Reserved)        | 0,062$ (sin anticipo) - 0,058$ (todo por adelantado) |
+| Instancia reservada (3 años) (Reserved)       | 0,043$ (sin anticipo) - 0,037$ (todo por adelantado) |
+| Plan de ahorro EC2 (1 año) (Saving plan)      | 0,062$ (sin anticipo) - 0,058$ (todo por adelantado) |
+| Instancia reservada convertible (1 año)       | 0,071$ (sin anticipo) - 0,066$ (todo por adelantado) |
+| Host dedicado (Dedicated host)                | Precio bajo demanda (On-demand)             |
+| Reserva de host dedicado (Dedicated host reservation) | Hasta el 70% de descuento         |
+| Reservas de capacidad (Capacity reservation)  | Precio bajo demanda (On-demand)             |
+
+## Modelo de responsabilidad compartida para EC2
+### AWS se encarga de:
+- Infraestructura (seguridad global de la red)
+- Aislamiento en hosts físicos
+- Sustitución de hardware defectuoso
+- Validación de la normativa
+
+### El cliente es responsable de:
+- Reglas de los grupos de seguridad
+- Parches y actualizaciones del sistema operativo
+- Software y utilidades instaladas en la instancia EC2
+- Roles IAM asignados a EC2 y gestión de acceso de usuarios IAM
+- Seguridad de los datos en tu instancia
+
+## Resumen - EC2
+- **Instancia EC2**: AMI (SO) + Tamaño de la Instancia (CPU + RAM) + Almacenamiento + Grupos de Seguridad + Datos de Usuario EC2
+- **Grupos de seguridad**: Firewall adjunto a la instancia EC2
+- **Datos de usuario de EC2**: Script lanzado en el primer arranque de una instancia
+- **SSH**: Iniciar un terminal en nuestras instancias EC2 (puerto 22)
+- **Rol de la Instancia EC2**: Enlace a los roles de IAM
+- **Opciones de compra**: On-Demand, Spot, Reservada (Estándar + Convertible + Programada), Host Dedicado, Instancia Dedicada
 
 [![aws-links](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../2_IAM/README.md)
 [![aws-links](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
