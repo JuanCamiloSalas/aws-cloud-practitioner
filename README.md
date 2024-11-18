@@ -9,7 +9,7 @@
 1. [ ¿Qué es cloud computing?](/1_Cloud_Computing/README.md)
 2. [ IAM - Identity & Access Management](/2_IAM/README.md)
 3. [ EC2 - Elastic Compute Cloud ](/3_EC2/README.md)
-4. Almacenamiento de instancias EC2
+4. [ EBS - Almacenamiento de instancias EC2 ](/4_EBS/README.md)
 5. ELB y ASG - Elastic Load Balancing y Auto Scaling Groups
 6. S3
 7. Bases de datos y analíticas

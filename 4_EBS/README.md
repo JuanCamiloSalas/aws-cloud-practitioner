@@ -57,3 +57,23 @@ Una instantánea es una copia de seguridad incremental, lo que significa que sol
 - Especifica la retención (de 1 día a 1 año)
 
 ![ebs-example](./assets/ebs-snapshot-delete.png)
+
+## AMI: Amazon Machine Image
+- Las AMI son una **personalización** de una instancia EC2
+    - EL usuario puede añadir su propio software, configuración, sistema operativo, monitorización...
+    - Tiempo de arranque/configuración más rápido porque todo el software está preempaquetado
+- Las AMI se construyen para una **región específica** (y pueden copiarse entre regiones)
+
+Se pueden lanzar instancias EC2 desde:
+- **Una AMI pública**: proporcionada por AWS
+- **Una AMI propia**: creada y mantenida por el usuario
+- **Una AMI de AWS Marketplace**: una AMI hecha por otra persona (y
+potencialmente vendida)
+
+### Proceso AMI (desde una instancia EC2)
+- Iniciar una instancia EC2 y personalizarla
+- Detener la instancia (para la integridad de los datos)
+- Construir una AMI - esto también creará instantáneas de EBS
+- Lanzar instancias desde otras AMIs
+
+![create-ami-ec2](./assets/ami-ec2.png)
