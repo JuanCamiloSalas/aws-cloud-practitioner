@@ -29,7 +29,7 @@ General (SSD) o Magnético al mes
     - Se facturará toda la capacidad aprovisionada
     - Puede aumentar la capacidad de la unidad con el tiempo
 
-![ebs-example](./assets/ebs-example.png)
+![](./assets/ebs-example.png)
 
 ## EBS - Atributo "Borrar al terminar”
 - Controla el comportamiento de EBS cuando una instancia EC2 termina
@@ -43,20 +43,20 @@ Una instantánea es una copia de seguridad incremental, lo que significa que sol
 - No es necesario separar el volumen para hacer la instantánea, pero se recomienda
 - Se puede copiar las instantáneas a través de AZ o Región:
 
-![ebs-example](./assets/ebs-snapshot.png)
+![](./assets/ebs-snapshot.png)
 
 ### Características de los Snapshots de EBS
 #### a. Archivo de Snapshots de EBS
 - Mover un snapshot a un "nivel de archivo" que es un 75% más barato
 - La restauración del archivo tarda entre 24 y 72 horas
 
-![ebs-example](./assets/ebs-snapshot-archive.png)
+![](./assets/ebs-snapshot-archive.png)
 
 #### b. Papelera de reciclaje para Snapshots EBS
 - Configura reglas para retener los snapshots eliminados para poder recuperarlos después de un borrado accidental
 - Especifica la retención (de 1 día a 1 año)
 
-![ebs-example](./assets/ebs-snapshot-delete.png)
+![](./assets/ebs-snapshot-delete.png)
 
 ## AMI: Amazon Machine Image
 - Las AMI son una **personalización** de una instancia EC2
@@ -76,4 +76,13 @@ potencialmente vendida)
 - Construir una AMI - esto también creará instantáneas de EBS
 - Lanzar instancias desde otras AMIs
 
-![create-ami-ec2](./assets/ami-ec2.png)
+![](./assets/ami-ec2.png)
+
+### Constructor de imágenes EC2 - EC2 Image Builder
+- Se utiliza para automatizar la creación de máquinas virtuales o imágenes de contenedores
+- => Automatizar la creación, mantener, validar y probar las AMIs de EC2
+- Puede ejecutarse de forma programada (semanalmente, cada vez que se actualizan los
+paquetes, etc...)
+- Servicio gratuito (sólo se paga por los recursos subyacentes)
+
+![](./assets/ec2-image-builder.png)
