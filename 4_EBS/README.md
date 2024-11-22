@@ -85,4 +85,5 @@ potencialmente vendida)
 paquetes, etc...)
 - Servicio gratuito (sólo se paga por los recursos subyacentes)
 
+
 ![](./assets/ec2-image-builder.png)
