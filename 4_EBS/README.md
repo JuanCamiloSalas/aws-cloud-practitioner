@@ -1,6 +1,6 @@
 [![aws-links](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../3_EC2/README.md)
 [![aws-links](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
-<!-- [![aws-links](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../xxx/README.md) -->
+[![aws-links](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../5_ELB_&_ASG/README.md)
 
 # EBS: Elastic Block Store
 [![aws-links](https://img.shields.io/badge/Documentación-orange?style=for-the-badge)](https://docs.aws.amazon.com/es_es/ebs/latest/userguide/what-is-ebs.html)
@@ -86,3 +86,89 @@ paquetes, etc...)
 - Servicio gratuito (sólo se paga por los recursos subyacentes)
 
 ![](./assets/ec2-image-builder.png)
+
+## Almacén de instancias EC2 - EC2 Instance Store
+- Los volúmenes EBS son **unidades de red** con un rendimiento bueno pero “limitado"
+- Mejor rendimiento de E/S (Entrada Y Salida)
+- Los almacenes de instancias EC2 pierden su almacenamiento si se detienen (son efímeros)
+- Bueno para el buffer / cache / datos de memoria virtual / contenido temporal
+- Riesgo de pérdida de datos si el hardware falla
+- Las copias de seguridad y la replicación son responsabilidad tuya
+
+> [!IMPORTANT]
+> Si necesitas un disco de hardware de alto rendimiento, utilizas EC2 Instance Store
+
+## EFS - Elastic File System
+- NFS (network file system / sistema de archivos de red) gestionado que **puede montarse en 100 EC2s**
+- EFS funciona con instancias EC2 de **Linux** en **multi-AZ**
+- Alta disponibilidad, escalable, caro (3x gp2), pago por uso, sin planificación de capacidad
+
+![](./assets/efs-example.png)
+
+### EBS vs EFS
+![](./assets/ebs-vs-efs.png)
+
+### EFS Infrequent Access (EFS-IA)
+- **Clase de almacenamiento** con costes optimizados para los archivos a los que no se accedes a diario
+- Hasta un 92% menos de coste en comparación con EFS Standard
+- EFS moverá automáticamente tus archivos a EFS-IA basándose en la última vez que se accedió a ellos
+- Habilita EFS-IA con una política de ciclo de vida (Lifecycle Policy)
+- Ejemplo: mover a EFS-IA los archivos a los que no se ha accedido en 60 días
+- Transparente para las aplicaciones que acceden a EFS
+
+![](./assets/efs-ia-example.png)
+
+## Modelo de responsabilidad compartida para el almacenamiento de EC2
+### AWS se encarga de:
+- Infraestructura
+- Replicación de datos para volúmenes EBS y unidades EFS
+- Sustitución de hardware defectuoso
+- Asegurar que sus empleados no puedan acceder a tus datos
+
+### El cliente es responsable de:
+- Configuración de procedimientos de copia de seguridad / instantánea
+- Configuración de la encriptación de datos
+- Responsabilidad de los datos en las unidades
+- Comprender el riesgo de utilizar EC2 Instance Store
+
+## Amazon FSx - Visión general 
+- **Lanzar sistemas de archivos de alto rendimiento de terceros en AWS**
+- Servicio totalmente gestionado
+
+![](./assets/aws-fsx.png)
+
+### Amazon FSx para Windows File Server
+- Un sistema de archivos compartido nativo de Windows totalmente gestionado, altamente fiable y escalable
+- Construido sobre Windows File Server
+- Soporta el protocolo SMB y Windows NTFS
+- Integrado con Microsoft Active Directory
+- Se puede acceder desde AWS o desde tu infraestructura local
+
+![](./assets/aws-fsx-windows.png)
+
+### Amazon FSx para Lustre
+- Un almacenamiento de archivos totalmente gestionado, de alto rendimiento y escalable para High Performance Computing (HPC)
+- El nombre Lustre deriva de "Linux" y "cluster"
+- Machine Learning, análisis, procesamiento de vídeo, modelado financiero, ...
+- Escala hasta 100s GB/s, millones de IOPS, latencias sub-ms
+
+![](./assets/aws-fsx-lustre.png)
+
+## Resumen - Almacenamiento de instancias EC2
+- **Volúmenes EBS**:
+    - Unidades de red adjuntas a una instancia EC2 a la vez
+    - Asignados a una zona de disponibilidad
+    - Puede utilizar EBS Snapshots para copias de seguridad / transferir volúmenes EBS a través de AZ
+- **AMI**: crea instancias EC2 listas para usar con nuestras personalizaciones
+- **EC2 Image Builder**: construye, prueba y distribuye automáticamente AMIs
+- **EC2 Instance Store**:
+    - Disco de hardware de alto rendimiento unido a nuestra instancia EC2
+    - Se pierde si nuestra instancia se detiene / termina
+- **EFS Elastic File System**: sistema de archivos en red, se puede adjuntar a 100s de instancias en una región
+- **EFS-IA**: clase de almacenamiento de coste optimizado para archivos de acceso poco frecuente
+- **FSx para Windows**: sistema de archivos en red para servidores Windows
+- **FSx para Lustre**: sistema de archivos Linux de alto rendimiento informático
+
+[![aws-links](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../3_EC2/README.md)
+[![aws-links](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
+[![aws-links](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../5_ELB_&_ASG/README.md)
