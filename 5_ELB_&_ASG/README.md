@@ -74,3 +74,22 @@ Los Load Balancers (equilibradores de carga) son servidores que reenvían el tr�
 - Classic Load Balancer (retirado en 2023) - Capa 4 y 7
 
 ![](./assets/aws-load-balancers.png)
+
+## ¿Qué es un Auto Scaling Group?
+- En la vida real, la carga de tus sitios web y aplicaciones puede cambiar
+- En el Cloud, puedes crear y deshacerte de servidores muy rápidamente
+- El objetivo de un Auto Scaling Group (ASG) es:
+    - Escalar para fuera (añadir instancias de EC2) para adaptarse a un aumento de la carga
+    - Escalar para dentro (eliminar instancias EC2) para que coincida con una disminución de la carga
+    - Asegurar que tenemos un número mínimo y máximo de máquinas en funcionamiento
+    - Registrar automáticamente nuevas instancias en un Load Balancer
+    - Reemplazar las instancias en mal estado
+- Ahorro de costes: sólo se ejecuta a una capacidad óptima (principio del Cloud)
+
+### Auto Scaling Group (ASG) en AWS
+
+![](./assets/aws-asg.png)
+
+### Auto Scaling Group en AWS con Load Balancer
+
+![](./assets/aws-lb-&-asg.png)
