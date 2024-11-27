@@ -1,8 +1,10 @@
-[![aws-links](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../4_EBS/README.md)
-[![aws-links](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
-<!-- [![aws-links](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../5_ELB_&_ASG/README.md) -->
+[![](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../4_EBS/README.md)
+[![](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
+[![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../6_S3/README.md)
 
 # Elastic Load Balancing & Auto Scaling Groups
+[![](https://img.shields.io/badge/Docs:_Elastic_Load_Balancing-orange?style=for-the-badge)](https://docs.aws.amazon.com/elasticloadbalancing/?icmpid=docs_homepage_networking)
+[![](https://img.shields.io/badge/Docs:_Auto_Scaling-orange?style=for-the-badge)](https://docs.aws.amazon.com/elasticloadbalancing/?icmpid=docs_homepage_networking)
 
 ## Escalabilidad y alta disponibilidad
 - La escalabilidad significa que una aplicación/sistema puede manejar mayores cargas adaptándose.
@@ -93,3 +95,34 @@ Los Load Balancers (equilibradores de carga) son servidores que reenvían el tr�
 ### Auto Scaling Group en AWS con Load Balancer
 
 ![](./assets/aws-lb-&-asg.png)
+
+### Auto Scaling Groups – Estrategias de escalado
+- **Escalado manual:** Actualizar el tamaño de un ASG manualmente
+- **Escalado dinámico:** Responde a los cambios en la demanda
+    - *Escalado simple / por pasos*
+        - Cuando se activa una alarma de CloudWatch (por ejemplo, CPU > 70%), se añaden 2 unidades
+        - Cuando se dispara una alarma de CloudWatch (ejemplo CPU < 30%), entonces se elimina 1
+    - *Escalado de seguimiento de objetivos*
+        - Ejemplo: Quiero que la media de la CPU de ASG se mantenga en torno al 40%
+    - *Escalado programado*
+        - Anticipar un escalado basado en patrones de uso conocidos
+        - Ejemplo: aumentar la capacidad mínima a 10 a las 17 horas de los viernes
+- **Escalado predictivo**
+    - Utiliza el Machine Learning para predecir el tráfico futuro con antelación
+    - Aprovisiona automáticamente el número correcto de instancias EC2 por adelantado
+    - Útil cuando tu carga tiene patrones predecibles basados en el tiempo
+
+## Resumen - ELB y ASG
+- **Alta disponibilidad** vs **escalabilidad** (vertical y horizontal) vs **elasticidad** vs **agilidad** en el Cloud
+- **Elastic Load Balancers (ELB)**
+    - Distribuyen el tráfico entre las instancias EC2 del backend, pueden ser Multi-AZ
+    - Soporta chequeos de salud
+    - 4 tipos: Classic (antiguo), Application (HTTP - L7), Network (TCP - L4), Gateway (L3)
+- **Auto Scaling Groups (ASG)**
+    - Implementa la elasticidad para tu aplicación, a través de múltiples AZ
+    - Escala las instancias EC2 en función de la demanda de tu sistema, sustituye las instancias en mal estado
+    - Integrado con el ELB
+
+[![](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../4_EBS/README.md)
+[![](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
+[![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../6_S3/README.md)

@@ -10,8 +10,8 @@
 2. [ IAM - Identity & Access Management](/2_IAM/README.md)
 3. [ EC2 - Elastic Compute Cloud ](/3_EC2/README.md)
 4. [ EBS - Almacenamiento de instancias EC2 ](/4_EBS/README.md)
-5. ELB y ASG - Elastic Load Balancing y Auto Scaling Groups
-6. S3
+5. [ ELB y ASG - Elastic Load Balancing y Auto Scaling Groups ](/5_ELB_&_ASG/README.md)
+6. [ S3 ](/6_S3/README.md)
 7. Bases de datos y analíticas
 8. Otros servicios de computación: ECS, Lambda, Batch, Lightsail
 9. Despliegue y gestión de la infraestructura a escala
