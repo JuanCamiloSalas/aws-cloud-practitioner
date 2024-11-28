@@ -47,8 +47,9 @@
 
 ### Objetos: valores y contenido
 Los valores de los objetos son el contenido del cuerpo:
-  - Max. Tamaño del objeto es 5TB (5000GB)
-  - Si subes más de 5GB, debes utilizar "subida multiparte"
+- Peso  
+  - Máx. Tamaño del objeto es 5TB (5000GB)
+  - Si se sube más de 5GB, se debe utilizar "subida multiparte"
 - Metadatos (lista de pares clave / valor de texto - metadatos del sistema o del usuario)
 - Etiquetas (par clave / valor - hasta 10) - útil para la seguridad / ciclo de vida
 - ID de versión (si está activado el versionado)
