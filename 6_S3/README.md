@@ -116,19 +116,19 @@ Cifra objetos en Amazon S3 utilizando claves de cifrado
 
 > [!CAUTION]
 > **Configuración del bucket para bloquear el acceso público**
-> Estos ajustes se crearon para **evitar la filtración de datos** de la empresa
-> Si se sabe que el bucket no debe ser nunca público, es mejor dejarlo activado
-> Pueden establecerse a nivel de cuenta
+> - Estos ajustes se crearon para **evitar la filtración de datos** de la empresa
+> - Si se sabe que el bucket no debe ser nunca público, es mejor dejarlo activado
+> - Pueden establecerse a nivel de cuenta
 
-## Amazon S3 - Alojamiento de sitios web estáticos
+## Alojamiento de sitios web estáticos
 - S3 puede alojar sitios web estáticos y hacerlos accesibles en Internet
 - La URL del sitio web será (dependiendo de la región)
-  - `http://bucket-name.s3-website-aws-region.amazonaws.com`
-  **`OR`**
-  - `http://bucket-name.s3-website.aws-region.amazonaws.com`
+  - *http://bucket-name.s3-website-aws-region.amazonaws.com*
+  - **`OR`**
+  - *http://bucket-name.s3-website.aws-region.amazonaws.com*
 - Si entrega un error 403 Forbidden, ¡asegúrate de que la política del bucket permite lecturas públicas!
 
-## Amazon S3 - Versionado
+## Versionado
 - Puedes versionar tus archivos en Amazon S3
 - Se activa **a nivel de bucket**
 - La misma clave de sobrescritura cambiará la "versión": 1, 2, 3....
@@ -139,3 +139,111 @@ Cifra objetos en Amazon S3 utilizando claves de cifrado
 > [!NOTE]
 > - Cualquier archivo que no esté versionado antes de activar el versionado tendrá la versión "nula".
 > - Suspender el versionado no elimina las versiones anteriores
+
+## Replicación (CRR & SRR)
+- Replicación entre regiones (CRR)
+- Replicación en la misma región (SRR)
+- Los buckets pueden estar en diferentes cuentas de AWS
+- La copia es asíncrona
+
+> *Casos de uso:*
+> - **CRR:** normativa, acceso de menor latencia, replicación entre cuentas
+> - **SRR:** agregación de logs, replicación en vivo entre cuentas de producción y de test
+
+> [!NOTE]
+> - Se debe activar el versionado en los buckets de origen y destino, los objetos quedan con el mismo id de versión tanto en origen como en destino
+> - Se debe dar los permisos IAM adecuados a S3
+
+## S3 Durabilidad y disponibilidad
+### Durabilidad:
+- Alta durabilidad (99,999999999%, 11 9's) de los objetos a través de múltiples AZ
+- Si almacenas 10.000.000 de objetos con Amazon S3, puedes esperar una media de pérdida de un solo objeto una vez cada 10.000 años
+- Lo mismo para todas las clases de almacenamiento
+
+### Disponibilidad:
+- Mide la disponibilidad de un servicio
+- Varía en función de la clase de almacenamiento
+- Ejemplo: El estándar S3 tiene una disponibilidad del 99,99% = no está disponible 53 minutos al año
+
+## Clases de almacenamiento S3
+- Amazon S3 Standard - Uso general
+- Amazon S3 Standard-Infrequent Access (IA)
+- Amazon S3 One Zone-Infrequent Access
+- Amazon S3 Glacier Instant Retrieval
+- Amazon S3 Glacier Flexible Retrieval
+- Amazon S3 Glacier Deep Archive
+- Amazon S3 Intelligent Tiering
+
+> [!IMPORTANT]
+> Se puede pasar de una clase a otra manualmente o utilizando las configuraciones del ciclo de vida de S3
+
+## 1. Standard S3 - Uso general
+- Disponibilidad del 99,99%.
+- Se utiliza para datos de acceso frecuente
+- Baja latencia y alto rendimiento
+- Soporta 2 fallos concurrentes de la instalación
+> *Casos de uso:* Análisis de Big Data, aplicaciones móviles y de juegos, distribución de contenidos...
+
+## 2. Clases de almacenamiento S3 – Infrequent Access
+- Clases de almacenamiento en S3
+- Coste inferior al de S3 Standard
+
+### 2.a. Amazon S3 Standard-Infrequent Access (S3 Standard-IA)
+- Disponibilidad del 99,9%.
+> *Casos de uso:* Recuperación de desastres, copias de seguridad
+
+### 2.b. Amazon S3 One Zone-Infrequent Access (S3 One Zone-IA)
+- Alta durabilidad (99,999999999%) en una sola AZ; los datos se pierden cuando se destruye la AZ
+- Disponibilidad del 99,5%.
+> *Casos de uso:* Almacenamiento de copias de seguridad secundarias de datos locales, o de datos que puedes recrear
+
+## 3. Amazon S3 Glacier
+- Almacenamiento de objetos de bajo coste pensado para archivar / hacer copias de seguridad
+- Precio: precio del almacenamiento + coste de recuperación del objeto
+
+### 3.a. Amazon S3 Glacier Instant Retrieval
+- Recuperación en milisegundos, ideal para datos a los que se accede una vez al trimestre
+- Duración mínima de almacenamiento de 90 días
+
+### 3.b. Amazon S3 Glacier Flexible Retrieval (antes Amazon S3 Glacier)
+- Acelerada (de 1 a 5 minutos), Estándar (de 3 a 5 horas), Masiva (de 5 a 12 horas) - gratis
+- Duración mínima de almacenamiento de 90 días
+
+### 3.c. Amazon S3 Glacier Deep Archive - para almacenamiento a largo plazo:
+- Estándar (12 horas), Masiva (48 horas)
+- Duración mínima de almacenamiento de 180 días
+
+## 4. S3 Intelligent-Tiering
+- Pequeña cuota mensual de monitorización y jerarquización automática
+- Mueve los objetos automáticamente entre los niveles de acceso en función del uso
+- No hay cargos por recuperación en S3 Intelligent-Tiering
+
+**Tipos de intelligent tiering:**
+- *Frequent Access tier (automático):* nivel por defecto
+- *Infrequent Access tier (automático):* objetos no accedidos durante 30 días
+- *Archive Instant Access tier (automático):* objetos no accedidos durante 90 días
+- *Archive Access tier (opcional):* configurable de 90 a más de 700 días
+- *Deep Archive Access tier (opcional):* configurable de 180 días a 700+ días
+
+## Comparación de clases S3
+[![aws-links](https://img.shields.io/badge/Storage_Classes-orange?style=for-the-badge)](https://aws.amazon.com/es/s3/storage-classes/)
+
+| | Standard | Intelligent-Tiering | Standard-IA | One Zone-IA | Glacier Instant Retrieval | Glacier Flexible Retrieval | Glacier Deep Archive |
+|-|-|-|-|-|-|-|-|
+| **Durabilidad** | 99.9...% == (11 9's) | 99.9...% == (11 9's) | 99.9...% == (11 9's) | 99.9...% == (11 9's) | 99.9...% == (11 9's) | 99.9...% == (11 9's) | 99.9...% == (11 9's) |
+| **Disponibilidad** | 99.99% | 99.9% | 99.9% | 99.5% | 99.9% | 99.99% | 99.99% |
+| **Acuerdo de nivel de servicio de disponibilidad** | 99.9% | 99% | 99% | 99% | 99% | 99.9% | 99.9% |
+| **Zonas de disponibilidad** | >= 3 | >= 3 | >= 3 | 1 | >= 3 | >= 3 | >= 3 |
+| **Min. Duración del almacenamiento** | Ninguno | Ninguno | 30 Días | 30 Días | 90 Días | 90 Días | 180 Días |
+| **Min. Tamaño del objeto facturable** | Ninguno | Ninguno | 128 KB | 128 KB | 128 KB | 40 KB | 40 KB |
+| **Tasa de recuperación** | Ninguno | Ninguno | Por GB recuperado | Por GB recuperado | Por GB recuperado | Por GB recuperado | Por GB recuperado |
+
+## Comparación de precios - *Ejemplo: us-east-1*
+[![aws-links](https://img.shields.io/badge/S3_Pricing-orange?style=for-the-badge)](https://aws.amazon.com/s3/pricing/)
+
+| | Standard | Intelligent-Tiering | Standard-IA | One Zone-IA | Glacier Instant Retrieval | Glacier Flexible Retrieval | Glacier Deep Archive |
+|-|-|-|-|-|-|-|-|
+| **Costo de almacenamiento (por GB al mes)** | 0.023$ | 0.0025$ - 0.023$ | 0.0125$ | 0.01$ | 0.004$ | 0.0036$ | 0.00099$ |
+| **Costo de recuperación (por cada 1000 solicitudes)** | **GET**: 0.0004$ <br> **POST**: 0.005$ | **GET**: 0.0004$ <br> **POST**: 0.005$ | **GET**: 0.001$ <br> **POST**: 0.01$ | **GET**: 0.001$ <br> **POST**: 0.01$ | **GET**: 0.01$ <br> **POST**: 0.02$ | **GET**: 0.0004$ <br> **POST**: 0.03$ <br> **Expedited**: 10$ <br> **Standard**: 0.05$ <br> **Bulk**: gratis | **GET**: 0.0004$ <br> **POST**: 0.05$ <br> **Standard**: 0.10$ <br> **Bulk**: 0.025$ |
+| **Tiempo de recuperación** | Instantáneo | Instantáneo | Instantáneo | Instantáneo | **Expedited** (1 – 5 mins) <br> **Standard** (3 – 5 hours) <br> **Bulk** (5 – 12 hours) | **Expedited** (1 – 5 mins) <br> **Standard** (3 – 5 hours) <br> **Bulk** (5 – 12 hours) | **Standard** (12 horas) <br> **Bulk** (48 horas) |
+| **Costo de la monitorización (1000 objetos)** | | 0.0025$ | | | | | |
