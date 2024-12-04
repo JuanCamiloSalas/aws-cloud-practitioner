@@ -17,6 +17,7 @@
 - Puedes acceder a tantos recursos como necesites, **casi al instante**.
 - Forma sencilla de acceder a **servidores, almacenamiento, bases de datos** y un conjunto de **servicios de aplicaciones**.
 - Amazon Web Services (AWS) posee y mantiene el hardware conectado a la red necesario para estos servicios de aplicaciones, mientras que aprovisionas y utilizas lo que necesitas a través de una aplicación web.
+
 ## Los modelos de despliegue del Cloud
 ### Cloud privado:
 - Servicios en el cloud utilizados por una sola organización, no expuestos al público
@@ -25,17 +26,19 @@
 - Satisfacer necesidades empresariales específicas
 
 <img src="./assets/rackspace.jpg" alt="Logo Cloud Privado" width="200px">
+
 ### Cloud público:
 - Recursos en el cloud que son propiedad de un proveedor de servicios en el cloud y son operados por él, y que se suministran a través de Internet
 - Seis ventajas de la computación en el cloud
 
 <img src="https://scontent.fbog9-1.fna.fbcdn.net/v/t39.30808-6/352781533_691513629654207_1365767299445157464_n.png?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=eDevusealwoQ7kNvgGv579u&_nc_ht=scontent.fbog9-1.fna&oh=00_AYDYgIirNUzjqcq1ztCNOh1i_EywGEw089myg8S_zmJypg&oe=666BAF3E" alt="Logo Cloud Privado" width="200px">
+
 ### Cloud híbrido:
 - Mantener algunos servidores en las instalaciones y extender algunas capacidades al cloud
 - Control de los activos sensibles en tu infraestructura privada
 - Flexibilidad y rentabilidad del cloud público
-## Las cinco características del Cloud computing
 
+## Las cinco características del Cloud computing
 **1. Autoservicio bajo demanda (on-demand):**
 - Los usuarios pueden aprovisionar recursos y utilizarlos sin interacción humana del proveedor de servicios
 
@@ -52,8 +55,8 @@
 
 **5. Servicio medido:**
 - El uso se mide, los usuarios pagan correctamente por lo que han utilizado
-## Seis ventajas del Cloud computing
 
+## Seis ventajas del Cloud computing
 **1. Cambia el gasto de capital (CAPEX) por el gasto operativo (OPEX)**
 - Pagar bajo demanda: no poseer el hardware
 - Reducción del coste total de propiedad (TCO) y de los gastos operativos (OPEX)
@@ -69,14 +72,15 @@
 **5. Deja de gastar dinero en el funcionamiento y el mantenimiento de los centros de datos**
 
 **6. Sé global en minutos:** aprovecha la infraestructura global de AWS
-## Problemas resueltos por el Cloud
 
+## Problemas resueltos por el Cloud
 - **Flexibilidad:** Cambia los tipos de recursos cuando sea necesario.
 - **Rentabilidad:** Paga por lo que utilizas.
 - **Escalabilidad:** Permite acomodar mayores cargas reforzando el hardware o añadiendo nodos adicionales.
 - **Elasticidad:** Capacidad de reducir y aumentar la escala cuando sea necesario.
 - **Alta disponibilidad y tolerancia a los fallos:** Construye a través de los centros de datos (data centers).
 - **Agilidad:** Desarrollar, testear y lanzar rápidamente aplicaciones de software.
+
 ## Tipos de Cloud Computing
 | En las instalaciones | Infraestructura como servicio (IaaS) | Plataforma como servicio (PaaS) | Software como servicio (SaaS) |
 |----------------------|----------------------|-------------------------------------|--------------------------------|
@@ -94,6 +98,7 @@
 ![Tú administras](https://img.shields.io/badge/Tú_administras-175073?style=for-the-badge)
 
 ![El proveedor administra](https://img.shields.io/badge/El_proveedor_administra-FF4858?style=for-the-badge)
+
 ### Infraestructura como servicio (IaaS)
 - Proporciona bloques de construcción para la IT en el cloud
 - Proporciona redes, ordenadores y espacio de almacenamiento de datos
@@ -103,6 +108,7 @@
 subyacente
 - Se centra en el despliegue y la gestión de tus aplicaciones### Software como servicio (SaaS)
 - Producto completo que es ejecutado y gestionado por el proveedor de servicios
+
 ## Ejemplo de tipos de Cloud Computing 
 - Infraestructura como servicio: 
     - Amazon EC2 (en AWS) 
@@ -114,6 +120,7 @@ subyacente
     - Muchos servicios de AWS (por ejemplo, Rekognition para el
 aprendizaje automático)
     - Google Apps (Gmail), Dropbox, Zoom
+
 ## Precios del Cloud - Visión general rápida
 AWS tiene 3 fundamentos de precios, siguiendo el modelo de precios
 de pago por uso
@@ -139,17 +146,20 @@ de pago por uso
 
 - AWS Edge Locations / Points of Presence 
 - Puntos de presencia de AWS
+
 ### Regiones de AWS
 [![aws-links](https://img.shields.io/badge/aws_regiones-orange?style=for-the-badge)](https://aws.amazon.com/es/about-aws/global-infrastructure/regions_az/)
 - AWS tiene Regiones en todo el mundo 
 - Los nombres pueden ser us-east-1, eu-west-3... 
 - Una región es un grupo de centros de datos 
 - La mayoría de los servicios de AWS son de ámbito regional
+
 ### ¿Cómo elegir una región de AWS?
 - **Cumplimiento de los requisitos legales y de gobernanza de datos:** los datos nunca salen de una región sin tu permiso explícito.
 - **Proximidad a los clientes:** latencia reducida.
 - **Servicios disponibles en una región:** los nuevos servicios y las nuevas funciones no están disponibles en todas las regiones.
 - **Precios:** los precios varían de una región a otra y son transparentes en la página de precios del servicio.
+
 ### Zonas de disponibilidad de AWS
 - Cada región tiene muchas zonas de disponibilidad (normalmente 3, el mínimo es 3, el máximo es 6). Ejemplo:
     - ap-southeast-2a
@@ -160,11 +170,13 @@ de pago por uso
 - Están conectadas con redes de alto ancho de banda y latencia ultrabaja.
 
 ![AWS-region-az](./assets/aws-infra.png)
+
 ### Puntos de presencia de AWS (Edge Locations)
 - Amazon tiene +450 puntos de presencia (+10 cachés regionales) en +90 ciudades de +40 países.
 - El contenido se entrega a los usuarios finales con menor latencia.
 
 ![AWS edge locations](./assets/aws-edge-locations.png)
+
 ## Tour por la consola de AWS
 [![aws-links](https://img.shields.io/badge/Servicios_de_AWS_por_región-orange?style=for-the-badge)](https://aws.amazon.com/es/about-aws/global-infrastructure/regional-product-services/)
 
@@ -178,6 +190,7 @@ de pago por uso
     - Elastic Beanstalk (Plataforma como servicio)
     - Lambda (Función como servicio)
     - Rekognition (Software como servicio)
+
 ## Modelo de responsabilidad compartida & Política de uso aceptable
 [![aws-links](https://img.shields.io/badge/Shared_Responsibility_Model-orange?style=for-the-badge)](https://aws.amazon.com/compliance/shared-responsibility-model/?nc1=h_ls)
 [![aws-links](https://img.shields.io/badge/AWS_Acceptable_Use_Policy-orange?style=for-the-badge)](https://aws.amazon.com/aup/)
