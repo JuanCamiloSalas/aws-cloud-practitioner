@@ -247,3 +247,5 @@ Cifra objetos en Amazon S3 utilizando claves de cifrado
 | **Costo de recuperación (por cada 1000 solicitudes)** | **GET**: 0.0004$ <br> **POST**: 0.005$ | **GET**: 0.0004$ <br> **POST**: 0.005$ | **GET**: 0.001$ <br> **POST**: 0.01$ | **GET**: 0.001$ <br> **POST**: 0.01$ | **GET**: 0.01$ <br> **POST**: 0.02$ | **GET**: 0.0004$ <br> **POST**: 0.03$ <br> **Expedited**: 10$ <br> **Standard**: 0.05$ <br> **Bulk**: gratis | **GET**: 0.0004$ <br> **POST**: 0.05$ <br> **Standard**: 0.10$ <br> **Bulk**: 0.025$ |
 | **Tiempo de recuperación** | Instantáneo | Instantáneo | Instantáneo | Instantáneo | **Expedited** (1 – 5 mins) <br> **Standard** (3 – 5 hours) <br> **Bulk** (5 – 12 hours) | **Expedited** (1 – 5 mins) <br> **Standard** (3 – 5 hours) <br> **Bulk** (5 – 12 hours) | **Standard** (12 horas) <br> **Bulk** (48 horas) |
 | **Costo de la monitorización (1000 objetos)** | | 0.0025$ | | | | | |
+
+
