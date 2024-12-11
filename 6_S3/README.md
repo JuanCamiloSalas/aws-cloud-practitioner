@@ -248,4 +248,12 @@ Cifra objetos en Amazon S3 utilizando claves de cifrado
 | **Tiempo de recuperación** | Instantáneo | Instantáneo | Instantáneo | Instantáneo | **Expedited** (1 – 5 mins) <br> **Standard** (3 – 5 hours) <br> **Bulk** (5 – 12 hours) | **Expedited** (1 – 5 mins) <br> **Standard** (3 – 5 hours) <br> **Bulk** (5 – 12 hours) | **Standard** (12 horas) <br> **Bulk** (48 horas) |
 | **Costo de la monitorización (1000 objetos)** | | 0.0025$ | | | | | |
 
+## S3 Object Lock & Glacier Vault Lock
+### S3 Object Lock
+- Adoptar un modelo WORM (Write Once Read Many).
+- Bloquea el borrado de una versión del objeto durante un tiempo determinado.
 
+### Glacier Vault Lock
+- Adoptar un modelo WORM (Write Once Read Many).
+- Bloquea la política para futuras ediciones (ya no se puede modificar).
+- Útil para la normativa y retención de datos.
