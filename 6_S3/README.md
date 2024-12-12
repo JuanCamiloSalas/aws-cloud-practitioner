@@ -257,3 +257,6 @@ Cifra objetos en Amazon S3 utilizando claves de cifrado
 - Adoptar un modelo WORM (Write Once Read Many).
 - Bloquea la política para futuras ediciones (ya no se puede modificar).
 - Útil para la normativa y retención de datos.
+
+## Cifrado S3
+![](./assets/s3-encryption.png)
