@@ -260,3 +260,16 @@ Cifra objetos en Amazon S3 utilizando claves de cifrado
 
 ## Cifrado S3
 ![](./assets/s3-encryption.png)
+
+## Modelo de responsabilidad compartida para S3
+### AWS se encarga de:
+- Infraestructura
+- Replicación de datos para volúmenes EBS y unidades EFS
+- Sustitución de hardware defectuoso
+- Asegurar que sus empleados no puedan acceder a tus datos
+
+### El cliente es responsable de:
+- Configuración de procedimientos de copia de seguridad / instantánea
+- Configuración de la encriptación de datos
+- Responsabilidad de los datos en las unidades
+- Comprender el riesgo de utilizar EC2 Instance Store
