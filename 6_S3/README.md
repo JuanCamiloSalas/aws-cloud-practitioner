@@ -273,3 +273,123 @@ Cifra objetos en Amazon S3 utilizando claves de cifrado
 - Configuración de la encriptación de datos
 - Responsabilidad de los datos en las unidades
 - Comprender el riesgo de utilizar EC2 Instance Store
+
+## Familia AWS Snow
+[![aws-links](https://img.shields.io/badge/Documentación-orange?style=for-the-badge)](https://aws.amazon.com/es/snowball/)
+
+Dispositivos portátiles de alta seguridad para **recopilar, procesar datos, y migrar datos hacia y desde AWS**
+
+- Snowcone (Migración de datos & Edge computing)
+- Snowball Edge (Migración de datos & Edge computing)
+- Snowmobile (Migración de datos)
+
+### Migraciones de datos con AWS Snow
+#### Tiempo de transferencia:
+| Tamaño de datos | 100 Mbps      | 1 Gbps       | 10 Gbps     |
+|-----------------|---------------|--------------|-------------|
+| 10 TB           | 12 días       | 30 horas     | 3 horas     |
+| 100 TB          | 124 días      | 12 días      | 30 horas    |
+| 1 PB            | 3 años        | 124 días     | 12 días     |
+
+**Desafíos:**
+- Conectividad limitada
+- Ancho de banda limitado
+- Alto coste de la red
+- Ancho de banda compartido (no se puede maximizar la línea)
+- Estabilidad de la conexión
+
+> [!IMPORTANT]
+> Familia AWS Snow: dispositivos sin conexión para realizar migraciones de datos
+> Si la transferencia a través de la red tarda más de una semana, ¡utiliza los dispositivos Snowball!
+
+### Diagramas
+![](./assets/s3-diagramas.png)
+
+## Familia AWS Snow para migraciones de datos
+![](./assets/s3-aws-snow-families.png)
+
+### Familia AWS Snow: Snowball Edge (para las transferencias de datos)
+- Solución de transporte físico de datos: mover TBs o PBs de datos dentro o fuera de AWS
+- Alternativa a mover datos a través de la red (y pagar tarifas de red)
+- Paga por trabajo de transferencia de datos
+- Proporciona almacenamiento de bloques y almacenamiento de objetos compatible con Amazon S3
+- **Almacenamiento optimizado Snowball Edge**
+  - 80 TB de capacidad de HDD para volumen de bloques y almacenamiento de objetos compatible con S3
+- **Computación optimizada de Snowball Edge**
+  - 42 TB de capacidad HDD o 28 TB de capacidad NVMe para volumen de bloques y almacenamiento de objetos compatible con S3
+
+> *Casos de uso:*
+> - Migraciones al Cloud de grandes volúmenes de datos
+> - Recuperación ante desastres
+
+### Familia AWS Snow: AWS Snowcone
+- **Pequeño y portátil, en cualquier lugar, robusto y seguro, resiste entornos difíciles**
+- Ligero (4,5 libras, 2,1 kg)
+- Dispositivo utilizado para computación de borde, almacenamiento y transferencia de datos
+- **Snowcone** - 8 TB de almacenamiento HDD
+- **Snowcone SSD** - 14 TB de almacenamiento SSD
+- Utiliza Snowcone donde no quepa Snowball (entorno con limitaciones de espacio)
+- Debes proporcionar tu propia batería / cables
+- Se puede enviar a AWS sin conexión, o conectarlo a internet y utilizar **AWS DataSync** para enviar los datos
+
+### Familia AWS Snow: AWS Snowmobile
+- Transfiere exabytes de datos (1 EB = 1.000 PB = 1.000.000 TBs)
+- Cada Snowmobile tiene 100 PB de capacidad (utiliza varias en paralelo)
+- Alta seguridad: temperatura controlada, GPS, videovigilancia 24/7
+- Mejor que la Snowball si transfieres más de 10 PB
+
+### Comparativa
+| | Snowcone y Snowcone SSD | Almacenamiento optimizado Snowball Edge | Snowmobile |
+|-|-|-|-|
+| **Capacidad de almacenamiento** | 8 TB HDD<br>14 TB SSD | 80 TB utilizables | < 100 PB |
+| **Tamaño de la migración**      | Hasta 24 TB, online y offline | Hasta petabytes, sin conexión | Hasta exabytes, sin conexión |
+| **Agente DataSync**             | Preinstalado                  |                               |                              |
+
+### Familia AWS Snow - Proceso de uso
+1. Solicita la entrega de dispositivos Snowball desde la consola de AWS
+2. Instala el cliente Snowball / AWS OpsHub en tus servidores
+3. Conecta el Snowball a tus servidores y copia los archivos utilizando el cliente
+4. Devuelve el dispositivo cuando hayas terminado (va a la instalación de AWS adecuada)
+5. Los datos se cargarán en un bucket de S3
+6. La Snowball se borrará por completo
+
+## ¿Qué es Edge Computing?
+- Procesa los datos mientras se crean en una **Edge Location**, Un camión en la carretera, un barco en el mar, una estación minera bajo tierra...
+- Estos lugares pueden tener
+  - Acceso a Internet limitado / inexistente
+  - Acceso limitado / no fácil a la potencia de cálculo
+- Configuramos un dispositivo Snowball Edge / Snowcone para realizar Edge Computing
+- Casos de uso de Edge Computing:
+  - Preprocesamiento de datos
+  - Machine Learning
+  - Transcodificación de flujos multimedia
+- Eventualmente (si es necesario) podemos devolver el dispositivo a AWS (para transferir datos, por ejemplo)
+
+## Snow Family – Edge Computing 
+### Snowcone y Snowcone SSD (más pequeños)
+  - 2 CPU, 4 GB de memoria, acceso por cable o inalámbrico
+  - Alimentación USB-C mediante un cable o la batería opcional
+
+### Snowball Edge - Computación optimizada
+  - 104 vCPUs, 416 GiB de RAM
+  - GPU opcional (útil para procesamiento de vídeo o Machine Learning)
+  - Almacenamiento utilizable de 28 TB NVMe o 42 TB HDD
+  - Cluster de almacenamiento disponible (hasta 16 nodos)
+
+### Snowball Edge - Almacenamiento optimizado
+  - Hasta 40 vCPU, 80 GiB de RAM, 80 TB de almacenamiento
+
+> [!NOTE]
+> Todos: Pueden ejecutar instancias EC2 y funciones AWS Lambda (utilizando AWS IoT Greengrass)
+> Opciones de despliegue a largo plazo: 1 y 3 años con descuento
+
+### AWS OpsHub
+[![aws-links](https://img.shields.io/badge/Snowball_update(AWS_OPSHUB-orange?style=for-the-badge)](https://aws.amazon.com/es/blogs/aws/aws-snowball-edge-update/)
+
+- Históricamente, para utilizar los dispositivos de la Familia Snow, necesitabas una CLI (herramienta de interfaz de línea de comandos)
+- Hoy en día, puedes utilizar AWS OpsHub (un software que instalas en tu ordenador/portátil) para administrar tu dispositivo de la Familia Snow
+  - Desbloquear y configurar dispositivos individuales o en cluster
+  - Transferir archivos
+  - Lanzar y administrar instancias que se ejecutan en los dispositivos de la familia Snow
+  - Supervisar las métricas del dispositivo (capacidad de almacenamiento, instancias activas en tu dispositivo)
+  - Lanzar servicios de AWS compatibles en tus dispositivos (por ejemplo, instancias de Amazon EC2, AWS DataSync, Sistema de Archivos de Red (NFS))
