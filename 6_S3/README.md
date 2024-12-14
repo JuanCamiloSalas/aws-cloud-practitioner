@@ -1,6 +1,6 @@
 [![](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../5_ELB_&_ASG/README.md)
 [![](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
-<!-- [![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../6_S3/README.md) -->
+[![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../7_DB/README.md)
 
 # S3: Simple Storage Service
 [![aws-links](https://img.shields.io/badge/Documentación-orange?style=for-the-badge)](https://docs.aws.amazon.com/s3/?icmpid=docs_homepage_featuredsvcs)
@@ -384,7 +384,7 @@ Dispositivos portátiles de alta seguridad para **recopilar, procesar datos, y m
 > Opciones de despliegue a largo plazo: 1 y 3 años con descuento
 
 ### AWS OpsHub
-[![aws-links](https://img.shields.io/badge/Snowball_update(AWS_OPSHUB-orange?style=for-the-badge)](https://aws.amazon.com/es/blogs/aws/aws-snowball-edge-update/)
+[![aws-links](https://img.shields.io/badge/Snowball_update:AWS_OPSHUB-orange?style=for-the-badge)](https://aws.amazon.com/es/blogs/aws/aws-snowball-edge-update/)
 
 - Históricamente, para utilizar los dispositivos de la Familia Snow, necesitabas una CLI (herramienta de interfaz de línea de comandos)
 - Hoy en día, puedes utilizar AWS OpsHub (un software que instalas en tu ordenador/portátil) para administrar tu dispositivo de la Familia Snow
@@ -393,3 +393,47 @@ Dispositivos portátiles de alta seguridad para **recopilar, procesar datos, y m
   - Lanzar y administrar instancias que se ejecutan en los dispositivos de la familia Snow
   - Supervisar las métricas del dispositivo (capacidad de almacenamiento, instancias activas en tu dispositivo)
   - Lanzar servicios de AWS compatibles en tus dispositivos (por ejemplo, instancias de Amazon EC2, AWS DataSync, Sistema de Archivos de Red (NFS))
+
+## Cloud híbrido para el almacenamiento
+- AWS está impulsando el "cloud híbrido”
+  - Parte de tu infraestructura está en las instalaciones
+  - Parte de tu infraestructura está en el Cloud
+- Esto puede deberse a:
+  - Largas migraciones a el Cloud
+  - Requisitos de seguridad
+  - Requisitos de normativa
+  - Estrategia de IT
+- S3 es una tecnología de almacenamiento propia (a diferencia de EFS / NFS), así que ¿cómo expones los datos de S3 en las instalaciones?
+- ¡AWS Storage Gateway
+
+### Opciones nativas del Cloud de almacenamiento de AWS
+> [!IMPORTANT]
+> Esta clasificación de las opciones de storage es muy importante en términos del examen
+![](./assets/s3-cloud-storage-options.png)
+
+## AWS Storage Gateway
+- Puente entre los datos locales y los del Cloud en S3
+- **Servicio de almacenamiento híbrido para permitir que las instalaciones utilicen sin problemas el Cloud de AWS**
+- Casos de uso: recuperación de desastres, copias de seguridad y restauración, almacenamiento por niveles
+### Tipos de Gateway de almacenamiento:
+  - File Gateway
+  - Volume Gateway
+  - Tape Gateway
+> No es necesario conocer los tipos en el examen
+
+![](./assets/aws-storage-gateway.png)
+
+## Resumen - Amazon S3
+- **Buckets vs Objetos:** nombre único global, ligado a una región
+- **Seguridad de S3:** política de IAM, política de bucket S3 (acceso público), cifrado S3
+- **Sitios web de S3:** aloja un sitio web estático en Amazon S3
+- **Versionado de S3:** múltiples versiones de archivos, para evitar borrados accidentales
+- **Replicación de S3:** en la misma región o entre regiones, debe activar el control de versiones
+- **Clases de almacenamiento S3:** Standard, IA, One Zone-IA, Intelligent, Glacier (Instant, Flexible, Deep)
+- **Familia Snow:** importar datos a S3 a través de un dispositivo físico, edge computing
+- **OpsHub:** aplicación de escritorio para gestionar los dispositivos de la Familia Snow
+- **Storage Gateway:** solución híbrida para ampliar el almacenamiento local a S3
+
+[![](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../5_ELB_&_ASG/README.md)
+[![](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
+[![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../7_DB/README.md)

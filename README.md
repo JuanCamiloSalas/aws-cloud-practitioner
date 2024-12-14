@@ -12,7 +12,7 @@
 4. [ EBS - Almacenamiento de instancias EC2 ](/4_EBS/README.md)
 5. [ ELB y ASG - Elastic Load Balancing y Auto Scaling Groups ](/5_ELB_&_ASG/README.md)
 6. [ S3 ](/6_S3/README.md)
-7. Bases de datos y analíticas
+7. [ Bases de datos y analíticas ](/7_DB/README.md)
 8. Otros servicios de computación: ECS, Lambda, Batch, Lightsail
 9. Despliegue y gestión de la infraestructura a escala
 10. Aprovechando la infraestructura global de AWS
