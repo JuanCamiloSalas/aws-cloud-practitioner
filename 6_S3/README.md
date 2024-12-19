@@ -141,8 +141,8 @@ Cifra objetos en Amazon S3 utilizando claves de cifrado
 > - Suspender el versionado no elimina las versiones anteriores
 
 ## Replicación (CRR & SRR)
-- Replicación entre regiones (CRR)
-- Replicación en la misma región (SRR)
+- Replicación entre regiones (CRR) Cross-Region Replication
+- Replicación en la misma región (SRR) Same-Region Replication
 - Los buckets pueden estar en diferentes cuentas de AWS
 - La copia es asíncrona
 
@@ -179,7 +179,7 @@ Cifra objetos en Amazon S3 utilizando claves de cifrado
 
 ## 1. Standard S3 - Uso general
 - Disponibilidad del 99,99%.
-- Se utiliza para datos de acceso frecuente
+- Se utiliza para datos de **acceso frecuente**
 - Baja latencia y alto rendimiento
 - Soporta 2 fallos concurrentes de la instalación
 > *Casos de uso:* Análisis de Big Data, aplicaciones móviles y de juegos, distribución de contenidos...
