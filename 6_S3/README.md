@@ -263,16 +263,17 @@ Cifra objetos en Amazon S3 utilizando claves de cifrado
 
 ## Modelo de responsabilidad compartida para S3
 ### AWS se encarga de:
-- Infraestructura
-- Replicación de datos para volúmenes EBS y unidades EFS
-- Sustitución de hardware defectuoso
-- Asegurar que sus empleados no puedan acceder a tus datos
+- Infraestructura (seguridad global, durabilidad, disponibilidad, sostener la pérdida concurrente de datos en dos instalaciones)
+- Análisis de configuración y vulnerabilidad
+- Validación de la normativa
 
 ### El cliente es responsable de:
-- Configuración de procedimientos de copia de seguridad / instantánea
-- Configuración de la encriptación de datos
-- Responsabilidad de los datos en las unidades
-- Comprender el riesgo de utilizar EC2 Instance Store
+- Versionado de S3
+- Políticas de bucket S3
+- Configuración de la replicación de S3
+- Logs y monitorización
+- Clases de almacenamiento de S3
+- Encriptación de datos en reposo y en tránsito
 
 ## Familia AWS Snow
 [![aws-links](https://img.shields.io/badge/Documentación-orange?style=for-the-badge)](https://aws.amazon.com/es/snowball/)
