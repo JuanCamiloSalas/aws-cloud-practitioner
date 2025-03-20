@@ -134,3 +134,38 @@ tienen esquemas flexibles para construir aplicaciones modernas.
 - Haz que una tabla de DynamoDB sea accesible con **baja latencia** en varias regiones
 - Replicación **activa-activa (lectura/escritura** en cualquier región de AWS)
 ![](./assets/dynamo-global-tables.png)
+
+## Redshift
+- Redshift se basa en PostgreSQL, **pero no se utiliza para OLTP**
+- **Es OLAP - procesamiento analítico en línea (análisis y almacenamiento de datos)**
+- Carga los datos una vez cada hora, no cada segundo
+- Rendimiento 10 veces superior al de otros almacenes de datos, escala a PBs de datos
+- Almacenamiento de datos **en columnas** (en lugar de en filas)
+- Ejecución de consultas en paralelo masivo (MPP), con alta disponibilidad
+- Paga a medida que avanzas en función de las instancias aprovisionadas
+- Tiene una interfaz SQL para realizar las consultas
+- Las herramientas de BI, como AWS Quicksight o Tableau, se integran con ella
+
+## Amazon EMR
+- EMR = Elastic MapReduce
+- EMR ayuda a crear **clusters Hadoop (Big Data)** para analizar y procesar una gran cantidad de datos
+- Los clusters pueden estar formados por **cientos de instancias EC2**
+- También es compatible con Apache Spark, HBase, Presto, Flink...
+- EMR se encarga de todo el aprovisionamiento y la configuración
+- Autoescalado e integrado con instancias Spot
+
+> **Casos de uso:**
+> - Procesamiento de datos
+> - Machine Learning
+> - Indexación web
+> - Big data...
+
+## Amazon Athena
+- Servicio de consulta sin servidor para analizar los datos almacenados en Amazon S3
+- Utiliza el lenguaje SQL estándar para consultar los archivos
+- Admite CSV, JSON, ORC, Avro y Parquet (construido sobre Presto)
+- Precio: 5,00 dólares por TB de datos analizados
+- Utiliza datos comprimidos o en columnas para ahorrar costes (menos escaneo)
+- Casos de uso: Inteligencia empresarial/análisis/informes, analizar y consultar Logs de flujo de VPC, Logs de ELB, rastros de CloudTrail, etc.
+- Sugerencia de examen: analiza los datos en S3 usando SQL sin servidor, usa Athena
+![](./assets/athena.png)
