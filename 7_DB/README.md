@@ -80,12 +80,14 @@ tienen esquemas flexibles para construir aplicaciones modernas.
 - **Escala** la carga de trabajo de lectura de tu BD 
 - Puedes crear hasta 15 réplicas de lectura 
 - Los datos sólo se escriben en la BD principal 
+
 ![](./assets/rds-read-replica.png)
 
 ### Multi-AZ
 - **Recuperación** en caso de caída de la AZ (alta disponibilidad) 
 - Los datos sólo se leen/escriben en la base de datos principal 
 - Sólo se puede tener otra AZ como conmutación por error 
+
 ![](./assets/rds-multi-az.png)
 
 ### Multi-Region
@@ -95,7 +97,7 @@ tienen esquemas flexibles para construir aplicaciones modernas.
 - Coste de replicación
 ![](./assets/rds-multi-region.png)
 
-## Visión general de Amazon ElastiCache
+## Amazon ElastiCache
 - De la misma manera que RDS es para conseguir bases de datos relacionales gestionadas...
 - ElastiCache es para conseguir Redis o Memcached gestionados
 - Cachés = **bases de datos en memoria** de alto rendimiento y baja latencia
@@ -168,4 +170,5 @@ tienen esquemas flexibles para construir aplicaciones modernas.
 - Utiliza datos comprimidos o en columnas para ahorrar costes (menos escaneo)
 - Casos de uso: Inteligencia empresarial/análisis/informes, analizar y consultar Logs de flujo de VPC, Logs de ELB, rastros de CloudTrail, etc.
 - Sugerencia de examen: analiza los datos en S3 usando SQL sin servidor, usa Athena
+
 ![](./assets/athena.png)
