@@ -3,8 +3,8 @@
 [![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../6_S3/README.md)
 
 # Elastic Load Balancing & Auto Scaling Groups
-[![](https://img.shields.io/badge/Docs:_Elastic_Load_Balancing-orange?style=for-the-badge)](https://docs.aws.amazon.com/elasticloadbalancing/?icmpid=docs_homepage_networking)
-[![](https://img.shields.io/badge/Docs:_Auto_Scaling-orange?style=for-the-badge)](https://docs.aws.amazon.com/elasticloadbalancing/?icmpid=docs_homepage_networking)
+[![](https://img.shields.io/badge/Docs:_Elastic_Load_Balancing-orange?style=for-the-badge)](https://docs.aws.amazon.com/elasticloadbalancing/)
+[![](https://img.shields.io/badge/Docs:_Auto_Scaling-orange?style=for-the-badge)](https://docs.aws.amazon.com/autoscaling/)
 
 ## Escalabilidad y alta disponibilidad
 - La escalabilidad significa que una aplicación/sistema puede manejar mayores cargas adaptándose.
