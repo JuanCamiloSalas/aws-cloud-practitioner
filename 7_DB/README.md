@@ -3,7 +3,7 @@
 <!-- [![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../8) -->
 
 # Bases de Datos
-[![aws-links](https://img.shields.io/badge/Documentación-orange?style=for-the-badge)]()
+[![aws-links](https://img.shields.io/badge/ABOUT_DATABASES_ON_AWS-orange?style=for-the-badge)](https://docs.aws.amazon.com/es_es/whitepapers/latest/aws-overview/database.html)
 
 ## Introducción a las bases de datos
 
