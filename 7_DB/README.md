@@ -1,6 +1,6 @@
 [![](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../6_S3/README.md)
 [![](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
-<!-- [![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../8) -->
+[![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../8_Other_Compute_Services/README.md)
 
 # Bases de Datos
 [![aws-links](https://img.shields.io/badge/ABOUT_DATABASES_ON_AWS-orange?style=for-the-badge)](https://docs.aws.amazon.com/es_es/whitepapers/latest/aws-overview/database.html)
@@ -266,4 +266,4 @@ Soporta:
 
 [![](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../6_S3/README.md)
 [![](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
-<!-- [![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../8) -->
+[![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../8_Other_Compute_Services/README.md)
