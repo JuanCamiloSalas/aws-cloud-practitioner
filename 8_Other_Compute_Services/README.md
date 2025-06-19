@@ -1,6 +1,6 @@
-[![](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../7_DB)
+[![](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../7_DB/README.md)
 [![](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
-<!-- [![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../9) -->
+[![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../9_Deploy_&_Infra/README.md)
 
 # Otros Servicios de Computación
 ## [ECS - Elastic Container Service](https://aws.amazon.com/ecs)
@@ -92,3 +92,79 @@ Pago por **duración**: (en incrementos de 1 ms)
 - Después, 1 dólar por 600.000 GB-segundos
 
 ***Suele ser muy barato ejecutar AWS Lambda, por lo que es muy popular***
+
+## [Amazon API Gateway](https://aws.amazon.com/api-gateway)
+- Servicio totalmente gestionado para que los desarrolladores puedan crear, publicar, mantener, supervisar y asegurar fácilmente las API
+- **Serverless** y **escalable**
+- Soporta APIs RESTful y APIs WebSocket
+- Soporta seguridad, autenticación de usuarios, claves de la API, monitorización...
+
+### Ejemplo: construir una API serverless
+![](./assets/api-gtw-ex.png)
+
+## [AWS Batch](https://aws.amazon.com/batch)
+- **Procesamiento por lotes** totalmente gestionado **a cualquier escala**
+- Ejecuta eficientemente 100.000 trabajos de computación por lotes en AWS
+- Un trabajo "por lotes" es un trabajo con un inicio y un final (en contraposición a uno continuo)
+- Batch lanzará dinámicamente **instancias EC2 o instancias Spot**
+- AWS Batch proporciona la cantidad adecuada de computación / memoria
+- Tú envías o programas los trabajos por lotes y AWS Batch se encarga del resto
+- Los trabajos por lotes se definen como **imágenes Docker** y **se ejecutan en ECS**
+- Útil para optimizar los costes y centrarse menos en la infraestructura
+
+### Batch - Ejemplo simplificado
+![](./assets/batch-ex.png)
+
+## Batch vs Lambda
+**Lambda:**
+- Límite de tiempo
+- Tiempos de ejecución limitados
+- Espacio de disco temporal limitado
+- Serverless
+
+**Por lotes:**
+- Sin límite de tiempo
+- Cualquier tiempo de ejecución siempre que esté empaquetado como imagen Docker
+- Depende de EBS / almacén de instancias para el espacio en disco
+- Depende de EC2 (puede ser gestionado por AWS)
+
+## [Amazon Lightsail](https://aws.amazon.com/lightsail)
+- Servidores virtuales, almacenamiento, bases de datos y redes
+- Precios bajos y predecibles
+- Alternativa más sencilla al uso de EC2, RDS, ELB, EBS, Route 53...
+- Ideal para personas con **poca experiencia en el Cloud**
+- Puedes configurar notificaciones y monitorización de tus recursos Lightsail
+- Tiene alta disponibilidad pero no tiene autoescalado, integraciones limitadas con AWS
+
+> *Casos de uso:*
+> - Aplicaciones web sencillas (tiene plantillas para LAMP, Nginx, MEAN, Node.js...)
+> - Sitios web (plantillas para WordPress, Magento, Plesk, Joomla)
+> - Entorno de desarrollo/prueba
+
+## Resumen
+- **Docker:** tecnología de contenedores para ejecutar aplicaciones
+- **ECS:** ejecuta contenedores Docker en instancias EC2
+- **Fargate:**
+    - Ejecuta contenedores Docker sin aprovisionar la infraestructura
+    - Oferta serverless (sin instancias EC2)
+- **ECR:** Repositorio privado de imágenes Docker
+- **Batch:** ejecuta trabajos por lotes en AWS a través de instancias EC2
+gestionadas
+- **Lightsail:** precios predecibles y bajos para pilas de aplicaciones y bases de datos sencillas
+
+## Resumen - Lambda
+- Lambda es serverless, función como servicio, escalado sin fisuras, reactivo
+- **Facturación de Lambda:**
+    - Por el tiempo de ejecución x por la RAM aprovisionada
+    - Por el número de invocaciones
+- **Soporte de lenguajes:** muchos lenguajes de programación excepto (arbitrariamente) Docker
+- **Tiempo de invocación:** hasta 15 minutos
+
+> *Casos de uso:*
+> - Crear miniaturas para imágenes subidas a S3
+> - Ejecutar un trabajo cron sin servidor
+> - Gateway de la API: exponer las funciones Lambda como API HTTP
+
+[![](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../7_DB/README.md)
+[![](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
+[![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../9_Deploy_&_Infra/README.md)
