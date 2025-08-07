@@ -194,6 +194,13 @@ CodeBuild, CodeDeploy, Elastic Beanstalk, EC2, etc.
 
 ![](./assets/ssm-session-manager.png)
 
+### Pasos para implementar SSM
+1. Crear la instancia EC2 sin key pair
+2. Crear un Role para EC2 con la policy `AmazonSSMManagedInstanceCore`
+3. Attachar la instancia con el role en *actions* > *security* > *Modify IAM Role*
+4. Volver a *AWS Systems Manager* > *Node Tools* (panel izquierdo) > *Session Manager*
+5. Dar click en *start a session* y seleccionar la instancia
+
 ## [AWS OpsWorks](https://docs.aws.amazon.com/opsworks)
 - Chef y Puppet ayudan a realizar la configuración del servidor de forma automática, o acciones repetitivas
 - Funcionan muy bien con EC2 y VM On-Premises
