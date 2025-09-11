@@ -193,3 +193,39 @@ CodeBuild, CodeDeploy, Elastic Beanstalk, EC2, etc.
 > - Envía los datos de registro de la sesión a S3 o a CloudWatch Logs
 
 ![](./assets/ssm-session-manager.png)
+
+## [AWS OpsWorks](https://docs.aws.amazon.com/opsworks)
+- Chef y Puppet ayudan a realizar la configuración del servidor de forma automática, o acciones repetitivas
+- Funcionan muy bien con EC2 y VM On-Premises
+- AWS OpsWorks = Chef y Puppet gestionados
+- Es una alternativa a AWS SSM
+- Sólo aprovisiona **recursos estándar de AWS**: Instancias EC2, bases de datos, balanceadores de carga, volúmenes EBS...
+
+> [!NOTE]
+> En el examen: Se necesita Chef o Puppet => AWS OpsWorks
+
+### Arquitectura de OpsWorks
+![](./assets/aws-opswork.png)
+
+## Resumen - Despliegue
+- **CloudFormation:** (sólo AWS)
+    - Infraestructura como código, funciona con casi todos los recursos de AWS
+    - Se repite en todas las regiones y cuentas
+- **Beanstalk:** (sólo AWS)
+    - Plataforma como servicio (PaaS), limitada a ciertos lenguajes de programación o Docker
+    - Implementa el código de forma coherente con una arquitectura conocida: por ejemplo, ALB + EC2 + RDS
+- **CodeDeploy:** (híbrido) despliega y actualiza cualquier aplicación en los servidores
+- **Systems Manager:** (híbrido) parchea, configura y ejecuta comandos a escala
+- **OpsWorks:** (híbrido) gestiona Chef y Puppet en AWS
+
+## Resumen - Servicios para desarrolladores
+- **CodeCommit:** Almacena el código en un repositorio git privado (versión controlada)
+- **CodeBuild:** Construye y prueba el código en AWS
+- **CodeDeploy:** Implementa el código en los servidores
+- **CodePipeline:** Orquestación del pipeline (desde el código hasta la construcción y el
+despliegue)
+- **CodeArtifact:** Almacena paquetes de software / dependencias en AWS
+- **CodeStar:** Vista unificada para permitir a los desarrolladores hacer CICD y código
+- **Cloud9:** IDE (Entorno de Desarrollo Integrado) en el Cloud con collab
+- **AWS CDK:** Define tu infraestructura en el Cloud utilizando un lenguaje de
+programación
