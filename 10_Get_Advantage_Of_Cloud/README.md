@@ -32,3 +32,14 @@ Una **aplicación global** es una aplicación desplegada en **múltiples geograf
     - Acelera las cargas y descargas globales en Amazon S3
 - **AWS Global Accelerator:**
     - Mejora la dispon
+
+## Visión general de Amazon Route 53
+- Route53 es un DNS gestionado (Sistema de Nombres de Dominio)
+- El DNS es una colección de reglas y registros que ayuda a los clientes a entender cómo llegar a un servidor a través de las URL
+- En AWS, los registros más comunes son
+    - www.google.com => `12.34.56.78` == **Registro A (IPv4)**
+    - www.google.com => `2001:0db8:85a3:0000:0000:8a2e:0370:7334` == **AAAA IPv6**
+    - search.google.com => `www.google.com` == **CNAME**: nombre de host a nombre de host
+    - ejemplo.com => recurso AWS == **Alias** (ej: ELB, CloudFront, S3, RDS, etc...)
+
+![]
