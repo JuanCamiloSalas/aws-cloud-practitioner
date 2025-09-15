@@ -1,6 +1,6 @@
 [![](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../8_Other_Compute_Services/README.md)
 [![](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
-<!-- [![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../9_Deploy_&_Infra/README.md) -->
+[![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../10_Get_Advantage_Of_Cloud//README.md)
 
 # Despliegue y gestión de la infraestructura a escala
 ## [CloudFormation](https://aws.amazon.com/cloudformation)
@@ -236,3 +236,7 @@ despliegue)
 - **Cloud9:** IDE (Entorno de Desarrollo Integrado) en el Cloud con collab
 - **AWS CDK:** Define tu infraestructura en el Cloud utilizando un lenguaje de
 programación
+
+[![](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../8_Other_Compute_Services/README.md)
+[![](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
+[![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../10_Get_Advantage_Of_Cloud//README.md)
