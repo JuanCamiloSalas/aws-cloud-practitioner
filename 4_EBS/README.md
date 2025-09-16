@@ -36,7 +36,9 @@ General (SSD) o Magnético al mes
     - Por defecto, se elimina el volumen EBS root / raíz (atributo habilitado)
     - Por defecto, cualquier otro volumen EBS adjunto no se elimina (atributo deshabilitado)
 - Esto puede ser controlado por la consola de AWS / AWS CLI
-- Caso de uso: preservar el volumen root / raíz cuando se termina la instancias
+
+> *Caso de uso:*
+> Preservar el volumen root / raíz cuando se termina la instancias
 
 ## Snapshot / Instantáneas de EBS
 Una instantánea es una copia de seguridad incremental, lo que significa que solo se guardan los bloques del volumen que han cambiado desde la instantánea más reciente. Esto disminuye el tiempo necesario para crearlo y ahorra costos de almacenamiento, ya que no se duplican los datos.
