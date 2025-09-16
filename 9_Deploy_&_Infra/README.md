@@ -14,7 +14,7 @@ Por ejemplo, dentro de una plantilla de CloudFormation, el usuario indica:
 
 Entonces CloudFormation los crea por el usuario, en el orden correcto, con la configuración exacta que este especificó
 
-## # Ventajas de AWS CloudFormation
+### Ventajas de AWS CloudFormation
 **Infraestructura como código**
 - No se crean recursos manualmente, lo que es excelente para el control
 - Los cambios en la infraestructura se revisan a través del código
