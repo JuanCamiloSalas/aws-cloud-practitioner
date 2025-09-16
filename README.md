@@ -16,7 +16,7 @@
 8. [ Otros servicios de computación: ECS, Lambda, Batch, Lightsail ](/8_Other_Compute_Services/README.md)
 9. [ Despliegue y gestión de la infraestructura a escala ](/9_Deploy_&_Infra/README.md)
 10. [ Aprovechando la infraestructura global de AWS ](/10_Get_Advantage_Of_Cloud/README.md)
-11. Integraciones del Cloud
+11. [ Integraciones del Cloud ](/11_Cloud_Integrations/README.md)
 12. Monitorización del Cloud
 13. Virtual Private Cloud (VPC)
 14. Seguridad y normativa

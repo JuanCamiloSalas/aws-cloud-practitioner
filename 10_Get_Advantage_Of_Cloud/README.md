@@ -1,6 +1,6 @@
 [![](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../9_Deploy_&_Infra/README.md)
 [![](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
-<!-- [![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../10_Get_Advantage_Of_Cloud//README.md) -->
+[![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../11_Cloud_Integrations/README.md)
 
 # Aprovechando la infraestrucutra global de AWS
 ## ¿Por qué hacer una solicitud global?
@@ -96,6 +96,7 @@ Una **aplicación global** es una aplicación desplegada en **múltiples geograf
 
 ## [S3 Transfer Acceleration](https://aws.amazon.com/s3/transfer-acceleration)
 [![aws-links](https://img.shields.io/badge/Ver_Comparativa-orange?style=for-the-badge)](https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html)
+
 Aumenta la velocidad de transferencia transfiriendo el archivo a una ubicación edge de AWS que reenviará los datos al bucket de S3 en la región de destino
 
 ![](./assets/s3-transfer-acceleration.png)
@@ -108,7 +109,7 @@ Aumenta la velocidad de transferencia transfiriendo el archivo a una ubicación 
 
 ![](./assets/aws-global-accelerator.png)
 
-#### Comparativa del tráfico sin y con AWS Global Accelerator
+### Comparativa del tráfico sin y con AWS Global Accelerator
 [![aws-links](https://img.shields.io/badge/Speed_Comparison-orange?style=for-the-badge)](https://speedtest.globalaccelerator.aws/#/)
 
 ![](./assets/aws-global-accelerator-vs.png)
@@ -155,9 +156,9 @@ Eres responsable de la seguridad física del rack de Outposts
 - Amazon EMR
 
 ## [AWS WaveLength](https://aws.amazon.com/wavelength)
-- Las **WaveLength Zones** son despliegues de infraestructura incrustados en los centros de datos de los proveedores de telecomunicaciones de las redes 5G
-- Lleva los servicios de AWS al límite de las redes 5G, Ejemplo: `EC2`, `EBS`, `VPC`...
-- Aplicaciones de latencia ultrabaja a través de las redes 5G
+- Las **WaveLength Zones** son despliegues de infraestructura incrustados en los centros de datos de los proveedores de telecomunicaciones de las **redes 5G**
+- Lleva los servicios de AWS al límite de las **redes 5G**, Ejemplo: `EC2`, `EBS`, `VPC`...
+- Aplicaciones de latencia ultrabaja a través de las **redes 5G**
 - El tráfico no sale de la red del proveedor de servicios de comunicación (**CSP**)
 - Conexión segura y de gran ancho de banda con la región AWS matriz
 - Sin cargos adicionales ni acuerdos de servicio
@@ -165,4 +166,48 @@ Eres responsable de la seguridad física del rack de Outposts
 ![](./assets/aws-wavelength.png)
 
 > *Casos de uso:*
-> Ciudades inteligentes, diagnósticos asistidos por ML, vehículos conectados, flujos de vídeo en directo interactivos, AR/VR, juegos en tiempo real, ...
+> - Ciudades inteligentes
+> - Diagnósticos asistidos por ML
+> - Vehículos conectados
+> - Flujos de vídeo en directo interactivos
+> - AR/VR
+> - Juegos en tiempo real
+> - ...
+
+## [AWS Local Zones](https://aws.amazon.com/about-aws/global-infrastructure/localzones)
+- Coloca la informática, el almacenamiento, la base de datos y otros servicios de AWS seleccionados **más cerca de los usuarios finales** para ejecutar **aplicaciones sensibles a la latencia**
+- Amplía nuestra VPC a más ubicaciones - "**Extensión de una región de AWS**"
+- Compatible con EC2, RDS, ECS, EBS, ElastiCache, Direct Connect ...
+
+#### Ejemplo:
+- **Región de AWS**: N. Virginia (us-east-1)
+- **AWS Local Zones**: Boston, Chicago, Dallas, Houston, Miami, …
+
+## Arquitectura global de aplicaciones
+![](./assets/global-arch-1.png)
+![](./assets/global-arch-2.png)
+
+## Resumen - Aplicaciones globales en AWS
+- **DNS global: Route 53**
+    - Genial para dirigir a los usuarios a la implementación más cercana con la menor latencia
+    - Excelente para las estrategias de recuperación de desastres
+- **Red global de entrega de contenidos (CDN): CloudFront**
+    - Replica parte de tu aplicación a las ubicaciones de borde de AWS - disminuye la latencia
+    - Almacena las solicitudes comunes - mejora la experiencia del usuario y disminuye la latencia
+- **S3 Transfer Acceleration**
+    - Acelera las cargas y descargas globales en Amazon S3
+- **AWS Global Accelerator**
+    - Mejora la disponibilidad y el rendimiento de la aplicación global utilizando la red global de AWS
+___
+- **AWS Outposts**
+    - Implementa racks Outposts en tus propios centros de datos para ampliar los servicios de AWS
+- **AWS WaveLength**
+    - Lleva los servicios de AWS a edge location de las **redes 5G**
+    - Aplicaciones de latencia ultrabaja
+- **AWS Local Zones**
+    - Acerca los recursos de AWS (computación, base de datos, almacenamiento, ...) a los usuarios
+    - Buenas para aplicaciones sensibles a la latencia
+
+[![](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../9_Deploy_&_Infra/README.md)
+[![](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
+[![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../11_Cloud_Integrations/README.md)
