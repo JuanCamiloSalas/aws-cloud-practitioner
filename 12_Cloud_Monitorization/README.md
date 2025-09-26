@@ -31,6 +31,6 @@
 - Puedes elegir el periodo sobre el que evaluar una alarma
 - Ejemplo: crear una **alarma de facturación** en la métrica de facturación de CloudWatch
 - Estados de la alarma:
-    - OK
-    - INSUFFICIENT_DATA
-    - ALARM
+    - `OK`
+    - `INSUFFICIENT_DATA`
+    - `ALARM`
