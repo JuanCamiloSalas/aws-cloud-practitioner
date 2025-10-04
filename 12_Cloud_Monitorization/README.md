@@ -34,3 +34,22 @@
     - `OK`
     - `INSUFFICIENT_DATA`
     - `ALARM`
+
+## [Amazon CloudWatch Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html)
+- CloudWatch Logs puede recoger logs de:
+    - Elastic Beanstalk: recogida de logs desde la aplicación
+    - ECS: recopilación desde los contenedores
+    - AWS Lambda: recogida de logs de funciones
+    - CloudTrail basado en un filtro
+    - **Agentes de logs de CloudWatch: en máquinas EC2 o en servidores locales**
+    - Route53: registro de consultas DNS
+- Permite la **monitorización de logs en tiempo real**
+- Retención de logs de CloudWatch ajustable
+
+### CloudWatch Logs para EC2
+- Por defecto, ningún logs de tu instancia EC2 irá a CloudWatch
+- Tienes que ejecutar un agente de CloudWatch en EC2 para enviar los archivos de logs que quieras
+- Asegúrate de que los permisos IAM son correctos
+- **El agente de logs de CloudWatch también se puede configurar en las instalaciones**
+
+![](./assets/cw-logs.png)
