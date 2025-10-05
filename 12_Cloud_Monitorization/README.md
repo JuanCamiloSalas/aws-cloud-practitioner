@@ -53,3 +53,21 @@
 - **El agente de logs de CloudWatch también se puede configurar en las instalaciones**
 
 ![](./assets/cw-logs.png)
+
+## [Amazon EventBridge](https://aws.amazon.com/eventbridge) - (previamente CloudWatch Events)
+- Programar: Trabajos Cron (scripts programados)
+![](./assets/eventbridge-ex-1.png)
+
+- Patrón de eventos: Reglas de eventos para reaccionar ante un servicio que hace algo
+![](./assets/eventbridge-ex-2.png)
+
+- Activar funciones Lambda, enviar mensajes SQS/SNS...
+
+### Reglas de Amazon EventBridge
+![](./assets/eventbridge-rules.png)
+
+### Buses de eventos
+![](./assets/eventbridge-buses.png)
+- **Registro de esquemas:** esquema de eventos del modelo
+- Puedes **archivar los eventos** (todos/filtro) enviados a un bus de eventos (indefinidamente o por un periodo determinado)
+- Posibilidad de **reproducir los eventos archivados**
