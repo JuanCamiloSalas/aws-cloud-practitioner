@@ -71,3 +71,17 @@
 - **Registro de esquemas:** esquema de eventos del modelo
 - Puedes **archivar los eventos** (todos/filtro) enviados a un bus de eventos (indefinidamente o por un periodo determinado)
 - Posibilidad de **reproducir los eventos archivados**
+
+## [AWS CloudTrail](https://aws.amazon.com/cloudtrail )
+- **Proporciona gobernanza, normativa y auditoría para nuestra cuenta de AWS**
+- CloudTrail está activado por defecto
+- Obtén un **historial de eventos / llamadas a la API realizadas en nuestra cuenta de AWS** por:
+    - `Consola`
+    - `SDK`
+    - `CLI`
+    - `Servicios de AWS`
+- Puedes poner logs de CloudTrail en CloudWatch Logs o en S3
+- **Un rastro puede aplicarse a todas las Regiones (por defecto) o a una sola región.**
+- Si se elimina un recurso en AWS, **¡investiga primero CloudTrail!**
+
+![](./assets/cloudtrail-diagram.png)
