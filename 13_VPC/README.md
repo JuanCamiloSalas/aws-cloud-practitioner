@@ -27,7 +27,7 @@
     - Ejemplo: 2001:db8:3333:4444:cccc:dddd:eeee:ffff
 
 ## Manual de VPC y subredes
-- **VPC - Virtual Private Cloud**: red privada para desplegar tus recursos (recurso regional) 
+- **VPC - Virtual Private Cloud**: red privada para desplegar nuestros recursos (recurso regional) 
 - Las **subredes** nos permiten particionar tu red dentro de tu VPC (recurso de zona de disponibilidad)
 - Una **subred pública** `public subnet` es una subred accesible desde Internet
 - Una **subred privada** `private subnet` es una subred a la que no se puede acceder desde Internet 
@@ -38,9 +38,33 @@
 ### Diagrama de VPC
 ![](./assets/vpc-diagram.png)
 
-## Gateway de Internet y Gateways NAT
-- Los **Gateways de Internet** ayudan a nuestras instancias de la VPC a conectarse con Internet
+### Gateway de Internet y Gateways NAT
+
+- Los [**Gateways de Internet**](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html) ayudan a nuestras instancias de la VPC a conectarse con Internet
 - Las subredes públicas tienen una ruta hacia el gateway de Internet.
-- Los **Gateways NAT** (gestionados por AWS) y las **Instancias NAT** (autogestionadas) permiten que tus instancias en tus **subredes privadas** accedan a internet sin dejar de ser privadas
+- Los [**Gateways NAT**](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html) (gestionados por AWS) y las [**Instancias NAT**](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_NAT_Instance.html) (autogestionadas) permiten que nuestras instancias en nuestros **subredes privadas** accedan a internet sin dejar de ser privadas
 
 ![](./assets/gateway-ex.jpg)
+
+### ACL de red (NACL) y grupos de seguridad
+- [**NACL (ACL de red)**](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html)
+    - Un firewall que controla el tráfico desde y hacia la subred
+    - Puede tener reglas ALLOW y DENY
+    - Se adjuntan a nivel de subred
+    - Las reglas sólo incluyen direcciones IP
+- [**Grupos de seguridad**](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html)
+    - Un firewall que controla el tráfico hacia y desde una ENI / Instancia EC2
+    - Puede tener sólo reglas ALLOW
+    - Las reglas incluyen direcciones IP y otros grupos de seguridad
+
+#### Grupo de seguridad vs ACL de red (NACL) 
+
+[![aws-links](https://img.shields.io/badge/VPC_SECURITY_COMPARISON-orange?style=for-the-badge)](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Security.html#VPC_Security_Comparison)
+
+|Security group (Grupo de seguridad)|ACL de red|
+|---|---|
+|Opera en el nivel de la instancia|Opera en el nivel de la subred|
+|Solo admite reglas de permiso|Admite reglas de permiso y de denegación|
+|Es con estado: el tráfico de retorno se admite automáticamente, independientemente de las reglas|Es sin estado: las reglas deben permitir de forma explícita el tráfico de retorno|
+|Evaluamos todas las normas antes de decidir si permitir el tráfico|Procesamos las reglas en orden, empezando por la regla numerada más baja, al decidir si permitir el tráfico|
+|Se aplica a una instancia únicamente si alguien especifica el grupo de seguridad al lanzar la instancia, o asocia el grupo de seguridad a la instancia más adelante|Se aplica automáticamente a todas las instancias de las subredes con las que se ha asociado (por lo tanto, proporciona una capa de defensa adicional si las reglas del grupo de seguridad son demasiado permisivas)|
