@@ -139,13 +139,13 @@
 - **Los Gateways NAT / Instancias:** Dan acceso a Internet a las subredes privadas
 - **NACL:** Sin estado, reglas de subred para entrada y salida
 - **Grupos de seguridad:** Con estado, operan a nivel de instancia EC2 o ENI
-- **VPC Peering:** Conecta dos VPC con rangos de IP no solapados, no transitivos
+- **VPC Peering:** Conecta dos VPC con rangos de IP no solapados, y no transitivos
 - **IP elástica:** IPv4 pública fija, coste continuo si no se utiliza
 ---
 - **VPC Endpoints:** Proporcionan acceso privado a los servicios de AWS dentro de la VPC
 - **PrivateLink:** Conecta de forma privada a un servicio en una VPC de terceros
 - **Logs de flujo de la VPC:** Registros de tráfico de red
-- **Site to Site VPN:** VPN a través de la Internet pública entre el DC local y AWS
+- **Site to Site VPN:** VPN a través de la Internet pública entre el Data Center local y AWS
 - **VPN de cliente:** Conexión OpenVPN desde tu ordenador a tu VPC
 - **Direct Connect:** Conexión privada directa a AWS (conexiòn física)
 - **Transit Gateway:** Conecta miles de redes VPC y locales entre sí
