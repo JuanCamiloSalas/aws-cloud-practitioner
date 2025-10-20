@@ -53,10 +53,10 @@ convertir el habla en texto de forma rápida y precisa
     - Puede integrarse con otros sistemas CRM o AWS
     - Sin pagos iniciales, un 80% más barato que las soluciones tradicionales de centro de contacto
 
+![](./assets/aws-lex-&-connect.jpg)
+
 > [!IMPORTANT]
 > Cada vez que haya una pregunta enfocada a chatbots piensa en Amazon Lex!
-
-![](./assets/aws-lex-&-connect.jpg)
 
 ## [Amazon Comprehend](https://aws.amazon.com/comprehend/)
 - Para el **Natural Language Processing – NLP (Procesamiento del Lenguaje Natural - PNL)**
@@ -81,10 +81,12 @@ convertir el habla en texto de forma rápida y precisa
 
 ## [Amazon Forecast](https://aws.amazon.com/forecast/)
 - Servicio totalmente gestionado que utiliza el ML para ofrecer previsiones muy precisas
-- Ejemplo: predecir las futuras ventas de un chubasquero
+- Ejemplo: predecir las futuras ventas de una camiseta
 - Un 50% más de precisión que mirando los datos por sí mismos
 - Reduce el tiempo de previsión de meses a horas
-- Casos de uso: Planificación de la demanda de productos, planificación financiera, planificación de recursos, ...
+
+> *Casos de uso:*
+> Planificación de la demanda de productos, planificación financiera, planificación de recursos, etc...
 
 ![](./assets/aws-forecast.png)
 
@@ -132,7 +134,7 @@ convertir el habla en texto de forma rápida y precisa
 - **Translate:** traducciones
 - **Lex:** construir bots conversacionales - chatbots
 - **Connect:** centro de contacto en el Cloud
-- **Comprehend:** procesamiento del lenguaje natural
+- **Comprehend:** procesamiento del lenguaje natural (NLP)
 - **SageMaker:** Machine Learning para todos los desarrolladores y científicos de datos
 - **Forecast:** construye previsiones muy precisas
 - **Kendra:** motor de búsqueda con ML
