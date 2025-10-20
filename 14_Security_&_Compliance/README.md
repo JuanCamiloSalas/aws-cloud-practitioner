@@ -1,6 +1,6 @@
 [![](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../13_VPC/README.md)
 [![](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
-<!-- [![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../14_Security_&_Compliance/README.md) -->
+[![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../15_Machine_Learning/README.md)
 
 # Seguridad y normativa
 ## Modelo de responsabilidad compartida de AWS
@@ -34,7 +34,7 @@
 - Garantizarte que obtienes almacenamiento ilimitado
 - Garantizarte la encriptación
 - Garantizar la separación de los datos entre diferentes clientes
-- Garantizar que los empleados de AWS no puedan acceder a tus datos
+- Garantizar que los empleados de AWS no puedan acceder a nuestros datos
 
 #### Tu responsabilidad:
 - Configuración del bucket
@@ -84,7 +84,7 @@ Existen varios tipos, como:
 - Protegerte contra las tarifas más altas durante los picos de uso debidos a los DDoS
 
 ## [AWS WAF – Web Application Firewall](https://aws.amazon.com/waf/)
-- Protege tus aplicaciones web de las vulnerabilidades web más comunes (Capa 7)
+- Protege nuestros aplicaciones web de las vulnerabilidades web más comunes (Capa 7)
 - La* **Capa 7 es HTTP** (frente a la Capa 4 que es TCP)
 - Despliega en el `Application Load Balancer`, `API Gateway`, `CloudFront`
 
@@ -120,7 +120,7 @@ Existen varios tipos, como:
     - Funciones AWS Lambda y Lambda Edge
     - Recursos de Amazon Lightsail
     - Entornos de Amazon Elastic Beanstalk
-- La lista puede aumentar con el tiempo (no se te hará la pregunta en el examen)
+- La lista puede aumentar con el tiempo (no se nos hará la pregunta en el examen)
 - **Actividades prohibidas:**
     - Caminar por la zona DNS a través de las Zonas Alojadas de Amazon Route 53
     - Denial of Service (DoS), Distributed Denial of Service (DDoS), DoS simulado, DDoS simulado
@@ -160,7 +160,7 @@ Existen varios tipos, como:
 - KMS => AWS gestiona el software de encriptación
 - CloudHSM => AWS proporciona el **hardware** de encriptación
 - Hardware dedicado (HSM = Módulo de Seguridad de Hardware)
-- Gestionas por completo tus propias claves de cifrado (no AWS)
+- Gestionas por completo nuestros propias claves de cifrado (no AWS)
 - El dispositivo HSM es resistente a la manipulación, cumple la normativa FIPS 140-2 Nivel 3
 
 ![](./assets/hsm-device.png)
@@ -186,7 +186,7 @@ Existen varios tipos, como:
 
 
 ## [AWS Certificate Manager (ACM)](https://aws.amazon.com/certificate-manager/)
-- Te permite aprovisionar, gestionar y desplegar  fácilmente los **certificados SSL/TLS**
+- Nos permite aprovisionar, gestionar y desplegar  fácilmente los **certificados SSL/TLS**
 - Se utilizan para proporcionar encriptación en vuelo para los sitios web (HTTPS)
 - Admite certificados TLS públicos y privados
 - Gratuito para los certificados TLS públicos
@@ -219,3 +219,165 @@ Te permite revisar, aceptar y hacer un seguimiento del estado de los acuerdos de
 
 > [!IMPORTANT]
 > Cada vez que salgan estas siglas y nos pidan dónde obtener esta información, reponde AWS Artifact
+
+## [Amazon GuardDuty](https://aws.amazon.com/guardduty/)
+- Descubrimiento inteligente de amenazas para proteger la cuenta de AWS
+- Utiliza algoritmos de Machine Learning, detección de anomalías y datos de terceros
+- Se activa con un clic (30 días de prueba), sin necesidad de instalar software
+- Los datos de entrada incluyen:
+    - **Logs de eventos de CloudTrail** - llamadas inusuales a la API, despliegues no autorizados
+        - **Eventos de gestión de CloudTrail** - crear subred VPC, crear rastro, ...
+        - **Eventos de datos S3 de CloudTrail** - obtener objeto, listar objetos, eliminar objeto, ...
+    - **Logs de flujo de la VPC** - tráfico interno inusual, dirección IP inusual
+    - **Logs de DNS** - instancias EC2 comprometidas que envían datos codificados dentro de las consultas DNS
+- **Características opcionales** - EKS Audit Logs, RDS & Aurora, EBS, Lambda, S3 Data Events…
+- Puedes configurar **reglas de EventBridge de CloudWatch** para ser notificado en caso de hallazgos
+- Las reglas de EventBridge pueden dirigirse a AWS Lambda o SNS
+- **Puede proteger contra ataques de criptomonedas (tiene un "hallazgo" dedicado a ello)**
+
+![](./assets/guardduty.png)
+
+## [Amazon Inspector](https://aws.amazon.com/inspector/)
+- **Evaluaciones de seguridad automatizadas**
+- **Para instancias EC2**
+    - Aprovechando el agente **AWS System Manager (SSM)**
+    - Analiza contra **accesibilidad no intencionada a la red**
+    - Analizar el **SO en ejecución** frente a vulnerabilidades conocidas
+- **Para imágenes de contenedor enviadas a Amazon ECR**
+    - Evaluación de las imágenes de contenedor a medida que se envían
+- **Para Funciones Lambda**
+    - Identifica vulnerabilidades de software en el código de las funciones y en las dependencias de los paquetes
+    - Evaluación de funciones a medida que se despliegan
+
+- Informes e integración con AWS Security Hub
+- Envío de hallazgos a Amazon Event Bridg
+
+![](./assets/aws-inspector.jpg)
+
+### ¿Qué evalúa Amazon Inspector?
+-Recuerda: **sólo para instancias EC2, imágenes de contenedor y funciones Lambda**
+-Escaneo continuo de la infraestructura, sólo cuando sea necesario
+-Vulnerabilidades de paquetes (EC2, ECR & Lambda) - base de datos de CVE
+-Accesibilidad de la red (EC2)
+-Se asocia una puntuación de riesgo a todas las vulnerabilidades para priorizarlas
+
+## [AWS Config](https://aws.amazon.com/config/)
+- Ayuda a **auditar y registrar la normativa de nuestros recursos de AWS**
+- Ayuda a **registrar las configuraciones y los cambios a lo largo del tiempo**
+- Posibilidad de almacenar los datos de configuración en S3 (analizados por Athena)
+- Preguntas que se pueden resolver con AWS Config:
+    - ¿Hay acceso SSH sin restricciones a mis grupos de seguridad?
+    - ¿Mis buckets tienen acceso público?
+    - ¿Cómo ha cambiado la configuración de mi ALB con el tiempo?
+- Puedes recibir alertas (notificaciones SNS) de cualquier cambio
+- AWS Config es un servicio por región
+- Puede agregarse entre regiones y cuentas
+
+Recurso de AWS Config 
+- Ver la normativa de un recurso a lo largo del tiempo 
+- Ver la configuración de un recurso a lo largo del tiempo 
+- Ver las llamadas a la API de CloudTrail si están activadas
+
+## [Amazon Macie](https://aws.amazon.com/macie/)
+- Amazon Macie es un servicio de seguridad y privacidad de datos totalmente gestionado que utiliza el **machine learning y la concordancia de patrones para descubrir y proteger nuestros datos sensibles en AWS.**
+- Macie nos ayuda a identificar y alertar sobre los **datos sensibles, como la información personal identificable (PII)**
+
+![](./assets/aws-macie.png)
+
+> [!IMPORTANT]
+> Si nos preguntan algo que haga referencia a descubrir datos sensibles piensa en AWS Macie
+
+## [AWS Security Hub](https://aws.amazon.com/security-hub/)
+- Herramienta de seguridad central para gestionar la seguridad en varias cuentas de AWS y automatizar las comprobaciones de seguridad
+- Dashboards integrados que muestran el estado actual de la seguridad y la normativa para tomar medidas rápidamente
+- Agrega automáticamente alertas en formatos predefinidos o de hallazgos personales de varios servicios de AWS y herramientas de socios de AWS:
+    - `Config`
+    - `GuardDuty`
+    - `Inspector`
+    - `Macie`
+    - `IAM Access Analyzer`
+    - `AWS Systems Manager`
+    - `AWS Firewall Manager`
+    - `AWS Health`
+    - `AWS Partner Network Solutions`
+
+> ![NOTE]
+> Primero debemos habilitar el servicio de configuración de AWS!
+
+![](./assets/aws-security-hub.png)
+
+## [Amazon Detective](https://aws.amazon.com/detective/)
+- GuardDuty, Macie y Security Hub se utilizan para identificar posibles problemas de seguridad, o hallazgos
+- A veces los hallazgos de seguridad requieren un análisis más profundo para aislar la causa raíz y tomar medidas: es un proceso complejo
+- Amazon Detective **analiza, investiga e identifica rápidamente la causa raíz de los problemas de seguridad o las actividades sospechosas (mediante ML y grafos)**
+- **Recoge y procesa automáticamente los eventos** de Logs de flujo de la VPC, CloudTrail, GuardDuty y crea una vista unificada
+- Produce visualizaciones con detalles y contexto para llegar a la causa raíz
+
+## AWS Abuse
+- Informar de la sospecha de que los recursos de AWS se utilizan con fines abusivos o ilegales
+- Los comportamientos abusivos y prohibidos son:
+    - **Spam:** recibir correos electrónicos no deseados desde una dirección IP propiedad de AWS, sitios web y foros con spam de los recursos de AWS
+    - **Escaneo de puertos:** envío de paquetes a sus puertos para descubrir los no seguros
+    - **Ataques DoS o DDoS:** direcciones IP propiedad de AWS que intentan sobrecargar o colapsar tus servidores/software
+    - **Intentos de intrusión:** logs en tus recursos
+    - **Alojar contenido censurable o con derechos de autor:** distribuir contenido ilegal o con derechos de autor sin consentimiento
+    - **Distribución de malware:** recursos de AWS que distribuyen software para dañar ordenadores o máquinas
+- Ponte en contacto con el equipo de abusos de AWS: [AWS abuse form](https://aws.amazon.com/forms/report-abuse), o abuse@amazonaws.com
+
+## Privilegios de usuario root
+- Usuario root = Propietario de la cuenta (creado cuando se crea la cuenta)
+- Tiene acceso completo a todos los servicios y recursos de AWS
+- **Bloquea las claves de acceso del usuario root de tu cuenta de AWS**
+- No utilices la cuenta root para las tareas cotidianas, ni siquiera para las administrativas
+- Acciones que sólo puede realizar el usuario root:
+    - **Cambiar la configuración de la cuenta** (nombre de la cuenta, dirección de correo electrónico, contraseña del usuario root, claves de acceso del usuario root)
+    - Ver ciertas facturas de impuestos
+    - **Cerrar la cuenta de AWS**
+    - Restaurar los permisos del usuario IAM
+    - **Cambiar o cancelar el plan de AWS Support**
+    - **Registrarse como vendedor en el Marketplace de instancias reservadas**
+    - Configurar un bucket de Amazon S3 para habilitar la MFA
+    - Editar o eliminar una política de bucket de Amazon S3 que incluya un ID de VPC o un ID de endpoints de VPC no válido
+    - Registrarse en GovCloud
+
+## [IAM Access Analyzer](https://aws.amazon.com/iam/access-analyzer/?nc1=h_ls)
+- Averigua qué recursos se comparten externamente
+    - Buckets S3
+    - Roles IAM
+    - Claves KMS
+    - Funciones Lambda y capas
+    - Colas SQS
+    - Secrets Manager
+- Definir **zona de confianza** = Cuenta de AWS o AWS Organization
+- Acceso fuera de zona de confianza => hallazgos
+
+![](./assets/aws-iam-access-analyzer.png)
+
+## Resumen - Seguridad y normativa
+- **Responsabilidad compartida en AWS**
+- **Shield:** Protección DDoS automática + soporte 24/7 avanzado
+- **WAF:** Firewall para filtrar las peticiones entrantes basado en reglas
+- **KMS:** Claves de cifrado gestionadas por AWS
+- **CloudHSM:** Cifrado por hardware, gestionamos las claves de cifrado
+- **AWS Certificate Manager:** Aprovisiona, administra e implementa certificados SSL/TLS
+- **Artifact:** Accede a informes de normativa como PCI, ISO, etc...
+- **GuardDuty:** Encuentra comportamientos maliciosos con los logs de VPC, DNS y CloudTrail
+- **Inspector:** Encuentra vulnerabilidades de software en EC2, Imágenes ECR y funciones Lambda
+- **Network Firewall:** Protege la VPC contra ataques de red
+___
+- **Config:** Rastrea los cambios de configuración y el cumplimiento de la normativa
+- **Macie:** Encuentra datos sensibles (por ejemplo, datos PII) en buckets de Amazon S3
+- **CloudTrail:** Rastrea las llamadas a la API realizadas por los usuarios dentro de la cuenta
+- **AWS Security Hub:** reúne los resultados de seguridad de varias cuentas de AWS
+- **Amazon Detective:** encuentra la causa raíz de los problemas de seguridad o las actividades sospechosas
+- **AWS Abuse:** Informa de los recursos de AWS utilizados con fines abusivos o ilegales
+- **Privilegios del usuario root:**
+    - Cambia la configuración de la cuenta
+    - Cierra tu cuenta de AWS
+    - Cambia o cancela tu plan de AWS Support
+    - Registrarte como vendedor en el Marketplace de instancias reservadas
+- **IAM Access Analyzer:** identifica qué recursos se comparten externamente
+
+[![](https://img.shields.io/badge/<-FF4859?style=for-the-badge)](../13_VPC/README.md)
+[![](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
+[![](https://img.shields.io/badge/>-FF4859?style=for-the-badge)](../15_Machine_Learning/README.md)
