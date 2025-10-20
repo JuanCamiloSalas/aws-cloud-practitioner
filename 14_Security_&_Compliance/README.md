@@ -12,7 +12,8 @@
 #### Responsabilidad del cliente - Seguridad DENTRO DEL Cloud
 - En el caso de la instancia EC2, el cliente es responsable de la gestión del sistema operativo invitado (incluidos los parches y actualizaciones de seguridad), la configuración del firewall y la red, el IAM
 - Encriptación de los datos de la aplicación
-- Controles compartidos:
+
+#### Controles compartidos:
 - Gestión de parches, gestión de la configuración, concienciación y formación
 
 ### Ejemplo para RDS
@@ -255,11 +256,11 @@ Te permite revisar, aceptar y hacer un seguimiento del estado de los acuerdos de
 ![](./assets/aws-inspector.jpg)
 
 ### ¿Qué evalúa Amazon Inspector?
--Recuerda: **sólo para instancias EC2, imágenes de contenedor y funciones Lambda**
--Escaneo continuo de la infraestructura, sólo cuando sea necesario
--Vulnerabilidades de paquetes (EC2, ECR & Lambda) - base de datos de CVE
--Accesibilidad de la red (EC2)
--Se asocia una puntuación de riesgo a todas las vulnerabilidades para priorizarlas
+- Recuerda: **sólo para instancias EC2, imágenes de contenedor y funciones Lambda**
+- Escaneo continuo de la infraestructura, sólo cuando sea necesario
+- Vulnerabilidades de paquetes (EC2, ECR & Lambda) - base de datos de CVE
+- Accesibilidad de la red (EC2)
+- Se asocia una puntuación de riesgo a todas las vulnerabilidades para priorizarlas
 
 ## [AWS Config](https://aws.amazon.com/config/)
 - Ayuda a **auditar y registrar la normativa de nuestros recursos de AWS**
