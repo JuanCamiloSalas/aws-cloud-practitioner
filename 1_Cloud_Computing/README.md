@@ -1,5 +1,5 @@
-[![aws-links](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
-[![aws-links](https://img.shields.io/badge/->-FD5A46?style=for-the-badge)](../2_IAM/README.md)
+[![](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
+[![](https://img.shields.io/badge/->-FD5A46?style=for-the-badge)](../2_IAM/README.md)
 # Qué es el Cloud Computing
 ## Problemas con el enfoque tradicional de las IT
 
@@ -194,7 +194,7 @@ de pago por uso
 ## Modelo de responsabilidad compartida & Política de uso aceptable
 [![aws-links](https://img.shields.io/badge/Shared_Responsibility_Model-orange?style=for-the-badge)](https://aws.amazon.com/compliance/shared-responsibility-model/?nc1=h_ls)
 [![aws-links](https://img.shields.io/badge/AWS_Acceptable_Use_Policy-orange?style=for-the-badge)](https://aws.amazon.com/aup/)
-![AWS edge locations](./assets/aws-responsability-model.jpg)
+![](./assets/aws-responsability-model.jpg)
 
-[![aws-links](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
-[![aws-links](https://img.shields.io/badge/->-FD5A46?style=for-the-badge)](../2_IAM/README.md)
+[![](https://img.shields.io/badge/CONTENT_TABLE-175074?style=for-the-badge)](../README.md)
+[![](https://img.shields.io/badge/->-FD5A46?style=for-the-badge)](../2_IAM/README.md)
