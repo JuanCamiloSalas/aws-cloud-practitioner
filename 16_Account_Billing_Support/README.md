@@ -9,9 +9,9 @@
 - Permite gestionar **varias cuentas de AWS**
 - La cuenta principal es la master account (cuenta maestra)
 - Beneficios de costes:
-- **Facturación consolidada** en todas las cuentas: método de pago único
-- Beneficios de precios por **uso agregado** (descuento por volumen para EC2, S3...)
-- **Agrupación de instancias EC2 reservadas** para un ahorro óptimo
+    - **Facturación consolidada** en todas las cuentas: método de pago único
+    - Beneficios de precios por **uso agregado** (descuento por volumen para EC2, S3...)
+    - **Agrupación de instancias EC2 reservadas** para un ahorro óptimo
 - La API está disponible para **automatizar la creación de cuentas de AWS**
 - **Restringe los privilegios de las cuentas mediante Políticas de Control de Servicios (SCP)**
 
