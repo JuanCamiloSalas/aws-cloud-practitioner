@@ -14,7 +14,7 @@
     - **Agrupación de instancias EC2 reservadas** para un ahorro óptimo
 - La API está disponible para **automatizar la creación de cuentas de AWS**
 - **Restringe los privilegios de las cuentas mediante Políticas de Control de Servicios (SCP)**
- 
+
 ### Estrategias multicuenta
 - Crear cuentas por **departamento**, por **centro de costes**, por **dev / test / prod**, en función de las **restricciones normativas** (usando SCP), para un **mejor aislamiento de los recursos** (ej.: VPC), para tener **límites de servicio separados por cuenta**, cuenta aislada para **logs**
 - Cuenta múltiple vs. Cuenta única VPC múltiple
@@ -75,4 +75,219 @@
 - ¡Evita la duplicación de recursos!
 - Los recursos soportados incluyen Aurora, Subredes de VPC, Transit Gateway, Route 53, EC2 Hosts dedicados...
 
-![](./assets/aws-ram.png)
+
+<img src="./assets/aws-ram.png"/>
+<figcaption>Como se aprecia en la imagen existe una master account que tiene una VPC compartida y una RDS DB, los demás recursos están desplegados en otras dos cuentas pero en la VPC de la master account</figcaption>
+
+## [AWS Service Catalog](https://aws.amazon.com/servicecatalog)
+
+- Los usuarios que son nuevos en AWS tienen demasiadas opciones, y pueden crear stacks que no sean conformes / estén en línea con el resto de la organización
+- Algunos usuarios sólo quieren un **portal rápido de autoservicio** para lanzar un conjunto de **productos autorizados** predefinidos **por los administradores**
+- Incluye: máquinas virtuales, bases de datos, opciones de almacenamiento, etc.
+
+<img src="./assets/aws-service-catalog.jpg"/>
+<figcaption>Ejemplo de uso del servicio Service Catalog</figcaption>
+
+## Modelos de precios en AWS
+
+AWS tiene 4 modelos de precios:
+1. **Paga por lo que usas:** sigue siendo ágil, responde, cumple con las demandas de escala
+2. **Ahorra cuando reserves:** minimiza los riesgos, gestiona de forma predecible los presupuestos, cumple con los requisitos a largo plazo 
+> Las reservas están disponibles para instancias reservadas de EC2, capacidad reservada de DynamoDB, nodos reservados de ElastiCache, instancias reservadas de RDS y nodos reservados de Redshift
+3. **Paga menos usando más:** descuentos por volumen
+4. **Paga menos al crecer AWS**
+
+### Servicios y niveles gratuitos en AWS
+- IAM
+- VPC
+- Facturación consolidada
+
+Servicios gratuitos pero que generan costos por los servicios que éstos crean:
+- Elastic Beanstalk
+- CloudFormation
+- Auto Scaling Groups
+
+[![aws-links](https://img.shields.io/badge/CAPA_GRATUITA_AWS-orange?style=for-the-badge)](https://aws.amazon.com/answers/account-management/aws-multi-account-billing-strategy/)
+
+### Precios de computación - EC2
+- Sólo se cobra por lo que usas
+- Número de instancias
+- Configuración de las instancias:
+    - Capacidad física
+    - Región
+    - Sistema operativo y software
+    - Tipo de instancia
+    - Tamaño de la instancia
+- Tiempo de funcionamiento del ELB y cantidad de datos procesados
+- Monitorización detallada
+
+#### Instancias bajo demanda:
+- Mínimo de 60s
+- Paga por segundo (Linux/Windows) o por hora (otros)
+#### Instancias reservadas:
+- Hasta un 75% de descuento en comparación con las instancias bajo demanda en la tarifa por hora
+- Compromiso de 1 o 3 años
+- Todo por adelantado, parcialmente por adelantado, sin adelantado
+#### Instancias spot:
+- Hasta un 90% de descuento en comparación con la tarifa horaria bajo demanda
+- Puja por la capacidad no utilizada
+#### Host dedicado:
+- Bajo demanda
+- Reserva para un compromiso de 1 o 3 años
+- Planes de ahorro como alternativa para ahorrar en el uso sostenido
+
+### Precio de computación – Lambda y ECS
+#### Lambda:
+- Pago por llamada
+- Pago por duración
+#### ECS:
+- Modelo de tipo de lanzamiento de EC2: No hay tarifas adicionales, pagas por los recursos de AWS almacenados y creados en tu aplicación
+#### Fargate:
+- Modelo de tipo de lanzamiento Fargate: Pagas por los recursos de vCPU y memoria asignados a tus aplicaciones en tus contenedores
+
+### Precios de almacenamiento - S3
+- **Clase de almacenamiento:** S3 Standard, S3 Infrequent Access, S3 One-Zone IA, S3 Intelligent Tiering, S3 Glacier and S3 Glacier Deep Archive
+- Número y tamaño de los objetos: El precio puede ser escalonado (en función del volumen)
+- Número y tipo de solicitudes
+- Transferencia de datos FUERA de la región S3
+- Aceleración de la transferencia en S3
+- Transiciones del ciclo de vida
+- Servicio similar: EFS (pago por uso, tiene reglas de acceso y ciclo de vida poco frecuentes)
+
+### Precios de almacenamiento - EBS
+- Tipo de volumen (en función del rendimiento)
+- Volumen de almacenamiento en GB por mes **provisionado**
+- IOPS:
+    - SSD de propósito general: Incluido
+    - IOPS provisionadas SSD: Cantidad provisionada en IOPS
+    - Magnético Número de peticiones
+- Snapshots:
+    - Coste de datos añadidos por GB al mes
+- Transferencia de datos:
+    - La transferencia de datos salientes está escalonada para descuentos por volumen
+    - La entrada es gratis
+
+### Precios de las bases de datos - RDS
+- Facturación por horas
+- Características de la base de datos:
+    - Motor
+    - Tamaño
+    - Clase de memoria
+- Tipo de compra:
+    - Bajo demanda
+    - Instancias reservadas (1 o 3 años) con pago inicial requerido
+- Almacenamiento de copias de seguridad: No hay cargo adicional por el almacenamiento de copias de seguridad hasta el 100% del almacenamiento total de tu base de datos para una región.
+- Almacenamiento adicional (por GB al mes)
+- Número de peticiones de entrada y salida al mes
+- Tipo de despliegue (el almacenamiento y la E/S son variables):
+    - Una única AZ
+    - Varias AZ
+- Transferencia de datos:
+    - La transferencia de datos salientes está escalonada por descuentos por volumen
+    - La entrante es gratis
+
+### Entrega de contenidos – CloudFront
+- Los precios son diferentes en las distintas regiones geográficas
+- Agregado para cada ubicación de borde, luego se aplica a tu factura
+- Transferencia de datos a domicilio (descuento por volumen)
+- Número de peticiones HTTP/HTTPS
+
+### Costes de red en AWS por GB - Simplificado
+- Utiliza la IP privada en lugar de la IP pública para obtener un buen ahorro y un mejor rendimiento de la red
+- Utiliza la misma AZ para obtener el máximo ahorro (a costa de la alta disponibilidad)
+
+![](./assets/aws-network-costs.png)
+
+## [Planes de ahorro (Saving Plans)](https://aws.amazon.com/savingsplans)
+[![aws-links](https://img.shields.io/badge/SAVING_PLANS_CALCULATOR-orange?style=for-the-badge)](https://aws.amazon.com/savingsplans/pricing)
+
+- Comprométete a pagar una determinada cantidad de dólares por hora durante 1 o 3 años
+- La forma más fácil de establecer compromisos a largo plazo en AWS
+- Configuración desde la consola AWS Cost Explorer
+
+### Plan de ahorro EC2
+- Hasta un 72% de descuento en comparación con el plan bajo demanda
+- **Comprométete al uso de familias de instancias individuales en una región (por ejemplo, C5 o M5)**
+- Independientemente de la AZ, el tamaño (m5.xl a m5.4xl), el SO (Linux/Windows) o la tenencia
+- Todo por adelantado, parcialmente por adelantado, sin adelantado
+
+### Plan de ahorro de computación
+- Hasta un 66% de descuento en comparación con el plan bajo demanda
+- Independientemente de la **familia**, **la región**, el tamaño, el sistema operativo, la tenencia y las **opciones de computación**
+- Opciones de computación: EC2, Fargate, Lambda
+
+### Plan de ahorro de Machine Learning: SageMaker...
+
+## [AWS Compute Optimizer](https://aws.amazon.com/compute-optimizer)
+- **Reduce los costes** y **mejora el rendimiento** recomendando los recursos de AWS óptimos para tus cargas de trabajo
+- Te ayuda a elegir las configuraciones óptimas y a dimensionar correctamente tus cargas de trabajo (sobre/subprovisionamiento)
+- Utiliza Machine Learning para analizar las **configuraciones de tus recursos** y sus **métricas de utilización CloudWatch**
+- Recursos soportados
+- Instancias EC2
+    - Grupos de autoescalado de EC2
+    - Volúmenes EBS
+    - Funciones Lambda
+    - Reduce tus costes hasta un 25% 
+- Las recomendaciones se pueden exportar a S3
+
+## Herramientas de facturación y cálculo de costes
+
+### Estimación de costes en el Cloud:
+- [Calculadora de precios](https://calculator.aws)
+
+### Seguimiento de los costes en el Cloud:
+- Dashboards de facturación
+- Etiquetas de asignación de costes
+- Cost and Usage Reports (AWS CUR)
+- Cost Explorer
+
+### Seguimiento de los planes de costes:
+- Alarmas de facturación
+- Presupuestos
+
+## AWS Pricing Calculator
+## Dashboards de facturación de AWS
+## Etiquetas (tags) de asignación de costes
+- Utiliza las **etiquetas de asignación** de costes para hacer un seguimiento detallado de tus costes de AWS
+- **Etiquetas generadas por AWS**
+    - Se aplican automáticamente al recurso que creas
+    - Comienza con el prefijo **aws: (por ejemplo, aws: createdBy)**
+- **Etiquetas definidas por el usuario**
+    - Definidas por el usuario
+    - Comienza con el prefijo **user:**
+
+### Etiquetado y grupos de recursos
+- Los **Tags** o **etiquetas** se utilizan para organizar los recursos:
+    - EC2: instancias, imágenes, load balancers, grupos de seguridad...
+    - RDS, recursos VPC, Route 53, usuarios IAM, etc.
+    - Los recursos creados por CloudFormation se etiquetan todos de la misma manera
+- Nomenclatura libre, las etiquetas más comunes son: Nombre, Entorno, Equipo...
+- Las etiquetas pueden utilizarse para crear **grupos de recursos**
+    - Crear, mantener y ver una colección de recursos que comparten etiquetas comunes
+    - Gestionar estas etiquetas utilizando el Tag Editor (editor de etiquetas)
+
+## [Cost and Usage Reports (AWS CUR)](https://aws.amazon.com/aws-cost-management/aws-cost-and-usage-reporting)
+- Profundiza en tus costes y uso de AWS
+- El Informe de Costes y Uso de AWS contiene el **conjunto más completo de datos de costes y uso de AWS disponible**, incluyendo metadatos adicionales sobre los servicios de AWS, los precios y las reservas (**por ejemplo, las instancias reservadas (RIs) de Amazon EC2**).
+- El AWS Cost & Usage Report (AWS CUR) enumera el uso de AWS para cada categoría de servicio utilizada por una cuenta y sus usuarios de IAM en partidas horarias o diarias, así como cualquier etiqueta que hayas activado con fines de asignación de costes.
+- Puede integrarse con Athena, Redshift o QuickSight
+
+## [Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer)
+- Visualiza, entiende y gestiona tus costes y uso de AWS a lo largo del tiempo
+- Crea informes personalizados que analicen los datos de costes y uso.
+- Analiza tus datos a alto nivel: costes totales y uso en todas las cuentas
+- O con granularidad mensual, por horas, a nivel de recursos
+- Elige un **plan de ahorro** óptimo (para reducir los precios de tu factura)
+- **Prevé el uso hasta 12 meses basándote en el uso anterior**
+
+### Cost Explore- Coste mensual por servicio de AWS
+![](./assets/aws-cost-exp-monthly-dashboard.png)
+
+### Cost Explore- Nivel de horas y recursos
+![](./assets/aws-cost-exp-cost&usage.png)
+
+### Cost Explorer - Plan de ahorro, Alternativa a las instancias reservadas
+![](./assets/aws-cost-exp-saving-plan.png)
+
+### Cost Explorer – Previsión de uso
+![](./assets/aws-cost-exp-usg-forecast.png)
