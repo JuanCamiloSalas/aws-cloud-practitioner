@@ -291,3 +291,22 @@ Servicios gratuitos pero que generan costos por los servicios que éstos crean:
 
 ### Cost Explorer – Previsión de uso
 ![](./assets/aws-cost-exp-usg-forecast.png)
+
+## Alarmas de facturación en CloudWatch
+- **La métrica de los datos de facturación se almacena en CloudWatch us-east-1**
+- Los datos de facturación son para los costes **globales** de AWS en todo el mundo
+- Es para el coste real, no para los costes proyectados
+- Pretende ser una simple alarma (no tan potente como AWS Budgets)
+
+![](./assets/cloudwatch-billing-alarms.png)
+
+## [AWS Budgets](https://aws.amazon.com/es/aws-cost-management/aws-budgets)
+- Crea un presupuesto y envía alarmas cuando los costes superen el presupuesto
+- 4 tipos de presupuestos: Uso, Coste, Reserva, Planes de ahorro
+- Para las instancias reservadas (RI)
+- Haz un seguimiento de la utilización
+- Soporta EC2, ElastiCache, RDS, Redshift
+- Hasta 5 notificaciones SNS por presupuesto
+- Puedes filtrar por: servicio, cuenta vinculada, etiqueta, opción de compra, tipo de instancia, región, zona de disponibilidad, operación API, etc.
+- Las mismas opciones que el AWS Cost Explorer
+- 2 presupuestos son gratuitos, luego 0,02$/día/presupuesto
