@@ -310,3 +310,37 @@ Servicios gratuitos pero que generan costos por los servicios que éstos crean:
 - Puedes filtrar por: servicio, cuenta vinculada, etiqueta, opción de compra, tipo de instancia, región, zona de disponibilidad, operación API, etc.
 - Las mismas opciones que el AWS Cost Explorer
 - 2 presupuestos son gratuitos, luego 0,02$/día/presupuesto
+
+## [AWS Cost Anomaly Detection](https://aws.amazon.com/aws-cost-management/aws-cost-anomaly-detection)
+- **Monitorización continua de tus costes y uso mediante ML para detectar gastos inusuales**
+- Aprende tus patrones de gasto únicos e históricos para detectar picos de costes puntuales y/o aumentos continuos de costes (no necesitas definir umbrales)
+- Monitoriza servicios de AWS, cuentas asociadas, etiquetas de asignación de costes o categorías de costes
+- Te envía el informe de detección de anomalías con el análisis de la causa raíz
+- Recibe notificaciones con alertas individuales o un resumen diario/semanal (mediante SNS)
+
+![](./assets/aws-cost-anom-detect.png)
+
+## [AWS Service Quotas](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html)
+- Avisarte cuando estés cerca de un umbral de valor de cuota de servicio
+- Crear alarmas CloudWatch en la consola cuotas de servicio
+- Ejemplo: Ejecuciones concurrentes de Lambda
+- Solicita un aumento de cuota a AWS Service Quotas o apaga los recursos antes de que se alcance el límite
+
+![](./assets/aws-service-quota.png)
+
+## [Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/?nc1=h_ls)
+- Sin necesidad de instalar nada - evaluación de
+alto nivel de la cuenta de AWS
+- Analiza tus cuentas de AWS y proporciona
+recomendaciones en 5 categorías
+- Optimización de costes - Rendimiento - Seguridad - Tolerancia a los fallos - Límites del servicio
+
+![](./assets/aws-trusted-advisor.png)
+
+### [Planes de soporte de Trusted Advisor](https://aws.amazon.com/premiumsupport/plans)
+
+
+| **7 Core Checks (7 controles básicos)** | **Full Checks (Controles completos)** |
+|---------------------------------------|----------------------------------------|
+| **Plan de soporte:** Basic y Developer | **Plan de soporte:** Business y Enterprise |
+| - Permisos de buckets S3 <br> - Grupos de seguridad – Puertos específicos sin restricciones <br> - Uso de IAM (un usuario IAM como mínimo) <br> - MFA en la cuenta root <br> - Snapshots de EBS públicos <br> - Snapshots públicos de RDS <br> - Service Quotas | - Comprobaciones completas disponibles en las 5 categorías <br> - Posibilidad de establecer alarmas de CloudWatch cuando se alcanzan los límites <br> - **Acceso programado mediante la AWS Support API** |
