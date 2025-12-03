@@ -344,3 +344,58 @@ recomendaciones en 5 categorías
 |---------------------------------------|----------------------------------------|
 | **Plan de soporte:** Basic y Developer | **Plan de soporte:** Business y Enterprise |
 | - Permisos de buckets S3 <br> - Grupos de seguridad – Puertos específicos sin restricciones <br> - Uso de IAM (un usuario IAM como mínimo) <br> - MFA en la cuenta root <br> - Snapshots de EBS públicos <br> - Snapshots públicos de RDS <br> - Service Quotas | - Comprobaciones completas disponibles en las 5 categorías <br> - Posibilidad de establecer alarmas de CloudWatch cuando se alcanzan los límites <br> - **Acceso programado mediante la AWS Support API** |
+
+## [Precios de los planes de soporte de AWS](https://aws.amazon.com/premiumsupport/pricing)
+[![aws-links](https://img.shields.io/badge/AWS_SUPPORT_PLAN_PRICING-orange?style=for-the-badge)](https://aws.amazon.com/premiumsupport/pricing)
+
+> [!IMPORTANT]
+> Los planes de soporte han cambiado, ya no son explícitamente los descritos acontinuación
+
+### Planes de soporte de AWS - Basic
+- **Servicio de atención al cliente y comunidades** - Acceso 24x7 al servicio de atención al cliente, documentación, libros blancos y foros de soporte.
+- **AWS Trusted Advisor** - Acceso a las 7 comprobaciones principales de Trusted Advisor y orientación para aprovisionar tus recursos siguiendo las mejores prácticas para aumentar el rendimiento y mejorar la seguridad.
+- **AWS Personal Health Dashboard** - Una visión personalizada de la salud de los servicios de AWS, y alertas cuando tus recursos se ven afectados.
+
+### Planes de soporte de AWS - Developer
+- Todo el plan de soporte basic+
+- **Acceso por correo electrónico en horario laboral** a los asociados de soporte de Cloud
+- Casos ilimitados / 1 contacto principal
+- **Gravedad de los casos / tiempos de respuesta:**
+    - Orientación general: < 24 horas laborables
+    - Sistema deteriorado: < 12 horas laborables
+
+### Planes de soporte de AWS - Business (24/7)
+- Destinado a ser utilizado si tienes cargas de **trabajo de producción**
+- **Trusted Advisor** - Conjunto completo de comprobaciones + acceso a la API
+- **Acceso telefónico, por correo electrónico y por chat 24x7** a los ingenieros de soporte de Cloud
+- Casos ilimitados / contactos ilimitados
+- Acceso a la Gestión de Eventos de Infraestructura **por una tarifa adicional**.
+- Gravedad de los casos / tiempos de respuesta:
+    - Orientación general: < 24 horas laborables
+    - Sistema deteriorado: < 12 horas laborables
+    - **Sistema de producción deteriorado: < 4 horas**
+    - **Sistema de producción averiado: < 1 hora**
+
+### Planes de soporte de AWS - Enterprise On-Ramp
+- Destinado a ser utilizado si tienes **cargas de trabajo de producción o críticas para el negocio**
+- Todo el Plan de Soporte Business +
+- Acceso a un grupo de **Gestores Técnicos de Cuentas (TAM)**
+- **Equipo de soporte de atención** (para la facturación y las mejores prácticas de la cuenta)
+- **Gestión de eventos de infraestructura, revisiones de operaciones y bien diseñadas**
+- Gravedad de los casos / tiempos de respuesta:
+    - ...
+    - Sistema de producción deteriorado: < 4 horas
+    - Sistema de producción averiado: < 1 hora
+    - **Sistema crítico de negocio caído: < 30 minutos**
+
+## Planes de soporte de AWS - Enterprise
+- Destinado a ser utilizado si tienes **cargas de trabajo de misión crítica**
+- Todo el Plan de Soporte Business +
+- Acceso a un **Gestor Técnico de Cuentas (TAM)** designado
+- **Equipo de soporte de atención** (para la facturación y las mejores prácticas de la cuenta)
+- **Gestión de eventos de la infraestructura, revisiones de operaciones y de la arquitectura**
+- Gravedad de los casos / tiempos de respuesta:
+    - ...
+    - Sistema de producción deteriorado: < 4 horas
+    - Sistema de producción averiado: < 1 hora
+    - **Sistema crítico de negocio caído**: < 15 minutos
