@@ -348,7 +348,7 @@ recomendaciones en 5 categorías
 ## [Precios de los planes de soporte de AWS](https://aws.amazon.com/premiumsupport/pricing)
 [![aws-links](https://img.shields.io/badge/AWS_SUPPORT_PLAN_PRICING-orange?style=for-the-badge)](https://aws.amazon.com/premiumsupport/pricing)
 
-> [!IMPORTANT]
+> [!CAUTION]
 > Los planes de soporte han cambiado, ya no son explícitamente los descritos acontinuación
 
 ### Planes de soporte de AWS - Basic
@@ -388,7 +388,7 @@ recomendaciones en 5 categorías
     - Sistema de producción averiado: < 1 hora
     - **Sistema crítico de negocio caído: < 30 minutos**
 
-## Planes de soporte de AWS - Enterprise
+### Planes de soporte de AWS - Enterprise
 - Destinado a ser utilizado si tienes **cargas de trabajo de misión crítica**
 - Todo el Plan de Soporte Business +
 - Acceso a un **Gestor Técnico de Cuentas (TAM)** designado
@@ -399,3 +399,6 @@ recomendaciones en 5 categorías
     - Sistema de producción deteriorado: < 4 horas
     - Sistema de producción averiado: < 1 hora
     - **Sistema crítico de negocio caído**: < 15 minutos
+
+> [!IMPORTANT]
+> Siempre que salga el acceso a un TAM seleccionar en el examen un plan **Enterprise**!
