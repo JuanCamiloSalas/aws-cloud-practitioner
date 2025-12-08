@@ -402,3 +402,17 @@ recomendaciones en 5 categorías
 
 > [!IMPORTANT]
 > Siempre que salga el acceso a un TAM seleccionar en el examen un plan **Enterprise**!
+
+## Resumen - Mejores prácticas para las cuentas
+- Operar múltiples cuentas utilizando **organizaciones**
+- Utiliza **SCP** (políticas de control de servicios) para restringir el poder de las cuentas
+- Configura fácilmente varias cuentas con las mejores prácticas con **AWS Control Tower**
+- **Utiliza etiquetas y etiquetas de asignación** de costes para facilitar la gestión y la facturación
+- **Pautas de IAM:** MFA, mínimo privilegio, política de contraseñas, rotación de contraseñas
+- **Config** para registrar todas las configuraciones de recursos y la normativa a lo largo del tiempo
+- **CloudFormation** para desplegar pilas entre cuentas y regiones
+- **Trusted Advisor** para obtener información, plan de soporte adaptado a tus necesidades
+- Envía logs de servicio y de acceso a **S3** o a **CloudWatch Logs**
+- **CloudTrail** para registrar las llamadas a la API realizadas en tu cuenta
+- **Si tu cuenta se ve comprometida**: cambia la contraseña root, borra y rota todas las contraseñas/claves, contacta con el soporte de AWS
+- Permitir a los usuarios crear stacks predefinidos definidos por los administradores mediante **AWS Service Catalog**
