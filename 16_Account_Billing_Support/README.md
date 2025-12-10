@@ -16,6 +16,8 @@
 - **Restringe los privilegios de las cuentas mediante Políticas de Control de Servicios (SCP)**
 
 ### Estrategias multicuenta
+[![aws-links](https://img.shields.io/badge/📄_Organizing_Your_AWS_Environment_Using_Multiple_Accounts-orange?style=for-the-badge)](https://docs.aws.amazon.com/whitepapers/latest/organizing-your-aws-environment/organizing-your-aws-environment.html)
+
 - Crear cuentas por **departamento**, por **centro de costes**, por **dev / test / prod**, en función de las **restricciones normativas** (usando SCP), para un **mejor aislamiento de los recursos** (ej.: VPC), para tener **límites de servicio separados por cuenta**, cuenta aislada para **logs**
 - Cuenta múltiple vs. Cuenta única VPC múltiple
 - Utilizar normas de etiquetado para la facturación
@@ -24,7 +26,7 @@
 
 ### Unidades Organizativas (UO) - Ejemplos
 
-[![aws-links](https://img.shields.io/badge/AWS_MULTI_ACOUNT_BILLING_STRATEGY-orange?style=for-the-badge)](https://aws.amazon.com/answers/account-management/aws-multi-account-billing-strategy/)
+[![aws-links](https://img.shields.io/badge/AWS_MULTI_ACOUNT_BILLING_STRATEGY-orange?style=for-the-badge)](#aws-control-tower)
 
 ![](./assets/multi-account-strategies.png)
 
@@ -32,7 +34,7 @@
 
 ![](./assets/aws-organizations.png)
 
-## Políticas de Control de Servicios (SCP)
+## [Políticas de Control de Servicios (SCP)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html)
 
 - Lista blanca o negra de acciones IAM
 - Se aplican a nivel de **OU** (organizational Unit) o de **Cuenta**
@@ -107,7 +109,7 @@ Servicios gratuitos pero que generan costos por los servicios que éstos crean:
 - CloudFormation
 - Auto Scaling Groups
 
-[![aws-links](https://img.shields.io/badge/CAPA_GRATUITA_AWS-orange?style=for-the-badge)](https://aws.amazon.com/answers/account-management/aws-multi-account-billing-strategy/)
+[![aws-links](https://img.shields.io/badge/CAPA_GRATUITA_AWS-orange?style=for-the-badge)](https://aws.amazon.com/free/)
 
 ### Precios de computación - EC2
 - Sólo se cobra por lo que usas
@@ -416,3 +418,16 @@ recomendaciones en 5 categorías
 - **CloudTrail** para registrar las llamadas a la API realizadas en tu cuenta
 - **Si tu cuenta se ve comprometida**: cambia la contraseña root, borra y rota todas las contraseñas/claves, contacta con el soporte de AWS
 - Permitir a los usuarios crear stacks predefinidos definidos por los administradores mediante **AWS Service Catalog**
+
+## Resumen - Herramientas de facturación y cálculo de costes
+- **Compute Optimizer:** recomienda configuraciones de recursos para reducir el coste
+- **Pricing Calculator:** coste de los servicios en AWS
+- **Dashboard de facturación:** visión general de alto nivel + dashboards de niveles gratuitos
+- **Etiquetas de asignación de costes:** etiqueta los recursos para crear informes detallados
+- **Cost & Usage Reports:** el conjunto de datos de facturación más completo
+- **Cost Explorer:** Visualiza el uso actual (detallado) y el uso previsto
+- **Alarmas de facturación:** en us-east-1 - haz un seguimiento de la facturación global y por servicio
+- **Budgets:** más avanzados - rastrea el uso, los costes y recibe alertas
+- **Planes de ahorro:** forma sencilla de ahorrar según el uso a largo plazo de AWS
+- **Cost Anomaly Detection:** detecta gastos inusuales utilizando Machine Learning
+- **Service Quotas:** te avisa cuando estás cerca del umbral de cuota de servicio
